@@ -1,17 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
 ---
 
 <Layout 
 	title="Your Name - Portfolio" 
 	description="Welcome to my portfolio. I'm a developer passionate about creating amazing web experiences."
 >
+	<Navbar />
 	<Hero />
-	<Skills />
-	<Projects />
-	<Contact />
 </Layout>
