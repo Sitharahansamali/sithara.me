@@ -1,0 +1,108 @@
+---
+// Add your own skills here!
+const skills = [
+	{ name: "HTML", level: 90 },
+	{ name: "CSS", level: 85 },
+	{ name: "JavaScript", level: 80 },
+	{ name: "React", level: 75 },
+	{ name: "Node.js", level: 70 },
+	{ name: "Git", level: 85 },
+];
+---
+
+<section id="skills" class="skills">
+	<div class="container">
+		<h2 class="section-title">My Skills</h2>
+		<p class="section-description">Here are some technologies I've been working with</p>
+		
+		<div class="skills-grid">
+			{skills.map(skill => (
+				<div class="skill-card">
+					<h3 class="skill-name">{skill.name}</h3>
+					<div class="skill-bar-container">
+						<div class="skill-bar" style={`width: ${skill.level}%`}></div>
+					</div>
+					<span class="skill-percentage">{skill.level}%</span>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills {
+		padding: 5rem 2rem;
+		background: white;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #333;
+	}
+
+	.section-description {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #666;
+		margin-bottom: 3rem;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.skill-card {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 10px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+	}
+
+	.skill-name {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		color: #667eea;
+	}
+
+	.skill-bar-container {
+		background: #e0e0e0;
+		height: 10px;
+		border-radius: 5px;
+		overflow: hidden;
+		margin-bottom: 0.5rem;
+	}
+
+	.skill-bar {
+		height: 100%;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border-radius: 5px;
+		transition: width 1s ease-out;
+	}
+
+	.skill-percentage {
+		font-size: 0.9rem;
+		color: #666;
+		font-weight: 600;
+	}
+
+	@media (max-width: 768px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

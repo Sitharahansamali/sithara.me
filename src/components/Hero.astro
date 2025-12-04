@@ -1,0 +1,137 @@
+---
+// You can customize these values later!
+const name = "Your Name";
+const title = "Full Stack Developer";
+const bio = "I'm passionate about creating beautiful and functional web applications. I love solving problems and learning new technologies.";
+---
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<h1 class="hero-title">
+				Hi, I'm <span class="highlight">{name}</span>
+			</h1>
+			<h2 class="hero-subtitle">{title}</h2>
+			<p class="hero-bio">{bio}</p>
+			<div class="hero-cta">
+				<a href="#projects" class="btn btn-primary">View My Work</a>
+				<a href="#contact" class="btn btn-secondary">Get In Touch</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+	}
+
+	.container {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.hero-content {
+		text-align: center;
+		animation: fadeInUp 1s ease-out;
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	.highlight {
+		color: #ffd700;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	.hero-subtitle {
+		font-size: 2rem;
+		font-weight: 400;
+		margin-bottom: 1.5rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.hero-bio {
+		font-size: 1.25rem;
+		line-height: 1.8;
+		max-width: 700px;
+		margin: 0 auto 2.5rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		padding: 1rem 2rem;
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		display: inline-block;
+	}
+
+	.btn-primary {
+		background: #ffd700;
+		color: #333;
+	}
+
+	.btn-primary:hover {
+		background: #ffed4e;
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: white;
+		border: 2px solid white;
+	}
+
+	.btn-secondary:hover {
+		background: white;
+		color: #667eea;
+		transform: translateY(-2px);
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.5rem;
+		}
+
+		.hero-bio {
+			font-size: 1.1rem;
+		}
+	}
+</style>
