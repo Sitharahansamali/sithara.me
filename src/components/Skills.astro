@@ -1,0 +1,138 @@
+---
+// Add your own skills here!
+const skills = [
+	{ name: "Python", icon: "🐍", color: "#3776AB" },
+	{ name: "Java", icon: "☕", color: "#007396" },
+	{ name: "HTML5", icon: "📄", color: "#E34F26" },
+	{ name: "CSS3", icon: "🎨", color: "#1572B6" },
+	{ name: "JavaScript", icon: "JS", color: "#F7DF1E" },
+	{ name: "React.js", icon: "⚛️", color: "#61DAFB" },
+	{ name: "TailwindCSS", icon: "🌊", color: "#06B6D4" },
+	{ name: "Bootstrap", icon: "B", color: "#7952B3" },
+	{ name: "C", icon: "C", color: "#A8B9CC" },
+	{ name: "C Sharp", icon: "C#", color: "#239120" },
+	{ name: "Node.js", icon: "📗", color: "#339933" },
+	{ name: "Figma", icon: "🎯", color: "#F24E1E" },
+	{ name: "PHP", icon: "🐘", color: "#777BB4" },
+	{ name: "MySQL", icon: "🐬", color: "#4479A1" },
+	{ name: "PostgreSQL", icon: "🐘", color: "#4169E1" },
+	{ name: "Git", icon: "🔧", color: "#F05032" },
+    { name: "GitHub", icon: "🐙", color: "#181717"  },
+    { name: "Docker", icon: "🐳", color: "#2496ED"  },
+    { name: "Linux", icon: "🐧", color: "#FCC624"  },
+    { name: "Supabase", icon: "⚡", color: "#3ECF8E"  },
+    { name: "Astro", icon: "🚀", color: "#FF5D01"  },
+    { name: "TypeScript", icon: "TS", color: "#3178C6"  },
+    { name: "Canva", icon: "🎨", color: "#00C4CC"  }
+];
+---
+
+<section id="skills" class="skills">
+	<div class="container">
+		<h2 class="section-title">My Skills</h2>
+		<p class="section-description">Here are some technologies I've been working with</p>
+		
+		<div class="skills-grid">
+			{skills.map(skill => (
+				<div class="skill-card">
+					<div class="skill-icon" style={`background: ${skill.color}20; border: 2px solid ${skill.color}40;`}>
+						<span class="icon-text" style={`color: ${skill.color};`}>{skill.icon}</span>
+					</div>
+					<h3 class="skill-name">{skill.name}</h3>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills {
+		padding: 5rem 2rem;
+		background: #1a1a2e;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.section-title {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #fff;
+	}
+
+	.section-description {
+		text-align: center;
+		font-size: 1.1rem;
+		color: #a0a0a0;
+		margin-bottom: 3rem;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.skill-card {
+		background: #16213e;
+		padding: 2rem 1.5rem;
+		border-radius: 15px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		border: 1px solid #2a3f5f;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+		border-color: #0f3460;
+	}
+
+	.skill-icon {
+		width: 70px;
+		height: 70px;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		transition: transform 0.3s ease;
+	}
+
+	.skill-card:hover .skill-icon {
+		transform: scale(1.1);
+	}
+
+	.icon-text {
+		font-weight: 700;
+		font-size: 1.8rem;
+	}
+
+	.skill-name {
+		font-size: 1rem;
+		color: #fff;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	@media (max-width: 768px) {
+		.skills-grid {
+			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+		}
+		
+		.skill-icon {
+			width: 60px;
+			height: 60px;
+			font-size: 1.5rem;
+		}
+	}
+</style>
