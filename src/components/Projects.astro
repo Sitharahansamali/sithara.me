@@ -27,8 +27,8 @@ const projects = [
 
 <section id="projects" class="projects">
 	<div class="container">
-		<h2 class="section-title">My Projects</h2>
-		<p class="section-description">Here are some of my recent works</p>
+		<h2 class="section-title">Projects</h2>
+		<p class="section-description">Featured work and practical projects I am most proud of.</p>
 		
 		<div class="projects-grid">
 			{projects.map(project => (
@@ -69,7 +69,7 @@ const projects = [
 <style>
 	.projects {
 		padding: 5rem 2rem;
-		background: #0D3B3F;
+		background: linear-gradient(180deg, #0d3b3f 0%, #0a3034 100%);
 	}
 
 	.container {
@@ -79,7 +79,7 @@ const projects = [
 
 	.section-title {
 		text-align: center;
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 		margin-bottom: 1rem;
 		color: #fff;
 	}
@@ -103,7 +103,7 @@ const projects = [
 		overflow: hidden;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
-		border: 1px solid #127681;
+		border: 1px solid rgba(23, 183, 148, 0.45);
 	}
 
 	.project-card:hover {
