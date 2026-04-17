@@ -1,45 +1,128 @@
 ---
-// Add your own skills here!
-const skills = [
-	{ name: "Python", icon: "🐍", color: "#3776AB" },
-	{ name: "Java", icon: "☕", color: "#007396" },
-	{ name: "HTML5", icon: "📄", color: "#E34F26" },
-	{ name: "CSS3", icon: "🎨", color: "#1572B6" },
-	{ name: "JavaScript", icon: "JS", color: "#F7DF1E" },
-	{ name: "React.js", icon: "⚛️", color: "#61DAFB" },
-	{ name: "TailwindCSS", icon: "🌊", color: "#06B6D4" },
-	{ name: "Bootstrap", icon: "B", color: "#7952B3" },
-	{ name: "C", icon: "C", color: "#A8B9CC" },
-	{ name: "C Sharp", icon: "C#", color: "#239120" },
-	{ name: "Node.js", icon: "📗", color: "#339933" },
-	{ name: "Figma", icon: "🎯", color: "#F24E1E" },
-	{ name: "PHP", icon: "🐘", color: "#777BB4" },
-	{ name: "MySQL", icon: "🐬", color: "#4479A1" },
-	{ name: "PostgreSQL", icon: "🐘", color: "#4169E1" },
-	{ name: "Git", icon: "🔧", color: "#F05032" },
-    { name: "GitHub", icon: "🐙", color: "#181717"  },
-    { name: "Docker", icon: "🐳", color: "#2496ED"  },
-    { name: "Linux", icon: "🐧", color: "#FCC624"  },
-    { name: "Supabase", icon: "⚡", color: "#3ECF8E"  },
-    { name: "Astro", icon: "🚀", color: "#FF5D01"  },
-    { name: "TypeScript", icon: "TS", color: "#3178C6"  },
-    { name: "Canva", icon: "🎨", color: "#00C4CC"  }
+const skillCategories = [
+	{
+		title: "Programming Languages",
+		emoji: "💻",
+		accent: "#63b3ff",
+		items: [
+			{ name: "Python", icon: "🐍", color: "#ffd43b" },
+			{ name: "Java", icon: "☕", color: "#f89820" },
+			{ name: "C", icon: "C", color: "#7cb8ff" },
+			{ name: "C#", icon: "C#", color: "#d585ff" }
+		]
+	},
+	{
+		title: "Frontend Development",
+		emoji: "🌐",
+		accent: "#5eead4",
+		items: [
+			{ name: "HTML", icon: "H", color: "#ff7f50" },
+			{ name: "CSS", icon: "C", color: "#4ea8ff" },
+			{ name: "JavaScript", icon: "JS", color: "#ffe066" },
+			{ name: "React", icon: "⚛", color: "#61dafb" },
+			{ name: "Astro", icon: "A", color: "#ff8f66" }
+		]
+	},
+	{
+		title: "Backend Development",
+		emoji: "⚙️",
+		accent: "#93c5fd",
+		items: [
+			{ name: "FastAPI", icon: "F", color: "#4ade80" },
+			{ name: "REST APIs", icon: "API", color: "#93c5fd" },
+			{ name: "PHP", icon: "php", color: "#c4b5fd" }
+		]
+	},
+	{
+		title: "Machine Learning & Data Science",
+		emoji: "🤖",
+		accent: "#fca5a5",
+		items: [
+			{ name: "Scikit-learn", icon: "SK", color: "#fb923c" },
+			{ name: "Pandas", icon: "PD", color: "#c4b5fd" },
+			{ name: "NumPy", icon: "NP", color: "#93c5fd" },
+			{ name: "Matplotlib", icon: "MP", color: "#fca5a5" },
+			{ name: "OpenCV", icon: "CV", color: "#86efac" }
+		]
+	},
+	{
+		title: "Cloud & AI Platforms",
+		emoji: "☁️",
+		accent: "#7dd3fc",
+		items: [
+			{ name: "AWS", icon: "AWS", color: "#fbbf24" },
+			{ name: "Microsoft Azure", icon: "AZ", color: "#7dd3fc" },
+			{ name: "Hugging Face", icon: "HF", color: "#fde68a" },
+			{ name: "Google Colab", icon: "GC", color: "#fb923c" }
+		]
+	},
+	{
+		title: "Tools & Development Environment",
+		emoji: "🛠️",
+		accent: "#6ee7b7",
+		items: [
+			{ name: "Git", icon: "Git", color: "#f87171" },
+			{ name: "GitHub", icon: "GH", color: "#d1d5db" },
+			{ name: "VS Code", icon: "VS", color: "#60a5fa" },
+			{ name: "Jupyter Notebook", icon: "JP", color: "#fb923c" },
+			{ name: "Docker", icon: "DK", color: "#7dd3fc" },
+			{ name: "Linux", icon: "🐧", color: "#fde68a" }
+		]
+	},
+	{
+		title: "Design & Productivity Tools",
+		emoji: "🎨",
+		accent: "#f9a8d4",
+		items: [
+			{ name: "Figma", icon: "Fg", color: "#f472b6" },
+			{ name: "Canva", icon: "Cv", color: "#67e8f9" }
+		]
+	},
+	{
+		title: "Databases",
+		emoji: "🗄️",
+		accent: "#a7f3d0",
+		items: [
+			{ name: "MySQL", icon: "MY", color: "#93c5fd" },
+			{ name: "SQLite", icon: "SQ", color: "#d1d5db" },
+			{ name: "Supabase", icon: "SB", color: "#86efac" }
+		]
+	},
+	{
+		title: "Automation / Other Technologies",
+		emoji: "🚀",
+		accent: "#c4b5fd",
+		items: [{ name: "n8n", icon: "n8n", color: "#fca5a5" }]
+	}
 ];
 ---
 
 <section id="skills" class="skills">
 	<div class="container">
 		<h2 class="section-title">Skills</h2>
-		<p class="section-description">Here are some technologies I've been working with</p>
-		
-		<div class="skills-grid">
-			{skills.map(skill => (
-				<div class="skill-card">
-					<div class="skill-icon" style={`background: ${skill.color}20; border: 2px solid ${skill.color}40;`}>
-						<span class="icon-text" style={`color: ${skill.color};`}>{skill.icon}</span>
+		<p class="section-description">A technical snapshot of my development stack and tools.</p>
+
+		<div class="skills-board">
+			{skillCategories.map((category, index) => (
+				<article class={`skill-category ${index === 0 ? "first" : ""}`} style={`--accent: ${category.accent};`}>
+					<h3 class="category-heading">
+						<span class="category-emoji" aria-hidden="true">{category.emoji}</span>
+						<span>{category.title}</span>
+					</h3>
+
+					<div class="icon-row">
+						{category.items.map((item) => (
+							<div class="icon-tile" aria-label={item.name} title={item.name}>
+								<span class="tile-text" style={`color: ${item.color};`}>{item.icon}</span>
+							</div>
+						))}
 					</div>
-					<h3 class="skill-name">{skill.name}</h3>
-				</div>
+
+					<p class="category-line">
+						<span class="diamond">◆</span>
+						{category.items.map((item) => item.name).join(", ")}
+					</p>
+				</article>
 			))}
 		</div>
 	</div>
@@ -47,92 +130,121 @@ const skills = [
 
 <style>
 	.skills {
-		padding: 5rem 2rem;
-		background: #0D3B3F;
+		padding: 5rem 1.5rem;
+		background: linear-gradient(180deg, #09111f 0%, #0a1626 100%);
 	}
 
 	.container {
-		max-width: 1200px;
+		max-width: 1180px;
 		margin: 0 auto;
 	}
 
 	.section-title {
 		text-align: center;
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-		color: #fff;
+		font-size: clamp(2rem, 5vw, 2.5rem);
+		margin: 0;
+		color: #eff7ff;
 	}
 
 	.section-description {
 		text-align: center;
-		font-size: 1.1rem;
-		color: #C1C6C8;
-		margin-bottom: 3rem;
+		font-size: 1rem;
+		color: #b8c4d8;
+		margin: 0.9rem 0 2.2rem;
 	}
 
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-		gap: 1.5rem;
-		max-width: 1000px;
-		margin: 0 auto;
+	.skills-board {
+		background: linear-gradient(180deg, #050d1b 0%, #04101f 100%);
+		border: 1px solid rgba(148, 163, 184, 0.2);
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
 	}
 
-	.skill-card {
-		background: #127681;
-		padding: 2rem 1.5rem;
-		border-radius: 15px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	.skill-category {
+		padding: 1.45rem 1.3rem 1.25rem;
+		border-top: 1px solid rgba(148, 163, 184, 0.3);
+	}
+
+	.skill-category.first {
+		border-top: none;
+	}
+
+	.category-heading {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
-		border: 1px solid #17B794;
+		gap: 0.55rem;
+		margin: 0;
+		font-size: 1.65rem;
+		font-weight: 700;
+		color: #e8eef9;
 	}
 
-	.skill-card:hover {
-		transform: translateY(-8px);
-		box-shadow: 0 8px 25px rgba(23, 183, 148, 0.3);
-		border-color: #17B794;
+	.category-emoji {
+		font-size: 1.15rem;
 	}
 
-	.skill-icon {
-		width: 70px;
-		height: 70px;
-		border-radius: 12px;
+	.icon-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+		margin-top: 0.9rem;
+	}
+
+	.icon-tile {
+		width: 56px;
+		height: 56px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 2rem;
-		transition: transform 0.3s ease;
+		border-radius: 12px;
+		background: linear-gradient(160deg, #17233a 0%, #202942 100%);
+		border: 1px solid rgba(148, 163, 184, 0.22);
 	}
 
-	.skill-card:hover .skill-icon {
-		transform: scale(1.1);
+	.tile-text {
+		font-size: 1.25rem;
+		font-weight: 800;
+		letter-spacing: 0.01em;
 	}
 
-	.icon-text {
-		font-weight: 700;
-		font-size: 1.8rem;
-	}
-
-	.skill-name {
+	.category-line {
+		margin: 0.95rem 0 0;
 		font-size: 1rem;
-		color: #fff;
-		text-align: center;
-		font-weight: 500;
+		line-height: 1.6;
+		color: #d8e4f7;
+	}
+
+	.diamond {
+		color: var(--accent);
+		margin-right: 0.5rem;
+		font-size: 0.8rem;
 	}
 
 	@media (max-width: 768px) {
-		.skills-grid {
-			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+		.skills {
+			padding: 4rem 1rem;
 		}
-		
-		.skill-icon {
-			width: 60px;
-			height: 60px;
-			font-size: 1.5rem;
+
+		.skill-category {
+			padding: 1.1rem 0.9rem 1rem;
+		}
+
+		.category-heading {
+			font-size: 1.1rem;
+		}
+
+		.icon-tile {
+			width: 50px;
+			height: 50px;
+		}
+
+		.tile-text {
+			font-size: 1.05rem;
+		}
+
+		.category-line {
+			font-size: 0.95rem;
 		}
 	}
 </style>
