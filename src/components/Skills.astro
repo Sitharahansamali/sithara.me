@@ -2,7 +2,6 @@
 const skillCategories = [
 	{
 		title: "Programming Languages",
-		emoji: "💻",
 		accent: "#63b3ff",
 		items: [
 			{ name: "Python", icon: "🐍", color: "#ffd43b" },
@@ -13,7 +12,6 @@ const skillCategories = [
 	},
 	{
 		title: "Frontend Development",
-		emoji: "🌐",
 		accent: "#5eead4",
 		items: [
 			{ name: "HTML", icon: "H", color: "#ff7f50" },
@@ -25,7 +23,6 @@ const skillCategories = [
 	},
 	{
 		title: "Backend Development",
-		emoji: "⚙️",
 		accent: "#93c5fd",
 		items: [
 			{ name: "FastAPI", icon: "F", color: "#4ade80" },
@@ -35,7 +32,6 @@ const skillCategories = [
 	},
 	{
 		title: "Machine Learning & Data Science",
-		emoji: "🤖",
 		accent: "#fca5a5",
 		items: [
 			{ name: "Scikit-learn", icon: "SK", color: "#fb923c" },
@@ -47,7 +43,6 @@ const skillCategories = [
 	},
 	{
 		title: "Cloud & AI Platforms",
-		emoji: "☁️",
 		accent: "#7dd3fc",
 		items: [
 			{ name: "AWS", icon: "AWS", color: "#fbbf24" },
@@ -58,7 +53,6 @@ const skillCategories = [
 	},
 	{
 		title: "Tools & Development Environment",
-		emoji: "🛠️",
 		accent: "#6ee7b7",
 		items: [
 			{ name: "Git", icon: "Git", color: "#f87171" },
@@ -71,7 +65,6 @@ const skillCategories = [
 	},
 	{
 		title: "Design & Productivity Tools",
-		emoji: "🎨",
 		accent: "#f9a8d4",
 		items: [
 			{ name: "Figma", icon: "Fg", color: "#f472b6" },
@@ -80,7 +73,6 @@ const skillCategories = [
 	},
 	{
 		title: "Databases",
-		emoji: "🗄️",
 		accent: "#a7f3d0",
 		items: [
 			{ name: "MySQL", icon: "MY", color: "#93c5fd" },
@@ -99,31 +91,33 @@ const skillCategories = [
 
 <section id="skills" class="skills">
 	<div class="container">
-		<h2 class="section-title">Skills</h2>
-		<p class="section-description">A technical snapshot of my development stack and tools.</p>
+		<div class="skills-shell">
+			<h2 class="section-title">Skills</h2>
+			<p class="section-description">A technical snapshot of my development stack and tools.</p>
 
-		<div class="skills-board">
-			{skillCategories.map((category, index) => (
-				<article class={`skill-category ${index === 0 ? "first" : ""}`} style={`--accent: ${category.accent};`}>
-					<h3 class="category-heading">
-						<span class="category-emoji" aria-hidden="true">{category.emoji}</span>
-						<span>{category.title}</span>
-					</h3>
+			<div class="skills-board">
+				{skillCategories.map((category, index) => (
+					<article class={`skill-category ${index === 0 ? "first" : ""}`} style={`--accent: ${category.accent};`}>
+						<h3 class="category-heading">
+							<span class="category-emoji" aria-hidden="true">{category.emoji}</span>
+							<span>{category.title}</span>
+						</h3>
 
-					<div class="icon-row">
-						{category.items.map((item) => (
-							<div class="icon-tile" aria-label={item.name} title={item.name}>
-								<span class="tile-text" style={`color: ${item.color};`}>{item.icon}</span>
-							</div>
-						))}
-					</div>
+						<div class="icon-row">
+							{category.items.map((item) => (
+								<div class="icon-tile" aria-label={item.name} title={item.name}>
+									<span class="tile-text" style={`color: ${item.color};`}>{item.icon}</span>
+								</div>
+							))}
+						</div>
 
-					<p class="category-line">
-						<span class="diamond">◆</span>
-						{category.items.map((item) => item.name).join(", ")}
-					</p>
-				</article>
-			))}
+						<p class="category-line">
+							<span class="diamond">◆</span>
+							{category.items.map((item) => item.name).join(", ")}
+						</p>
+					</article>
+				))}
+			</div>
 		</div>
 	</div>
 </section>
@@ -131,7 +125,9 @@ const skillCategories = [
 <style>
 	.skills {
 		padding: 5rem 1.5rem;
-		background: linear-gradient(180deg, #09111f 0%, #0a1626 100%);
+		background:
+			radial-gradient(circle at 12% 6%, rgba(23, 183, 148, 0.18), transparent 35%),
+			linear-gradient(180deg, #0d3b3f 0%, #0a3034 100%);
 	}
 
 	.container {
@@ -139,31 +135,41 @@ const skillCategories = [
 		margin: 0 auto;
 	}
 
+	.skills-shell {
+		padding: 2rem 1.4rem;
+		border-radius: 22px;
+		background:
+			radial-gradient(circle at 20% 0%, rgba(23, 183, 148, 0.2), transparent 45%),
+			linear-gradient(180deg, #0a2f34 0%, #08282d 100%);
+		border: 1px solid rgba(155, 239, 224, 0.28);
+		box-shadow: 0 22px 50px rgba(2, 19, 21, 0.4);
+	}
+
 	.section-title {
 		text-align: center;
 		font-size: clamp(2rem, 5vw, 2.5rem);
 		margin: 0;
-		color: #eff7ff;
+		color: #ffffff;
 	}
 
 	.section-description {
 		text-align: center;
 		font-size: 1rem;
-		color: #b8c4d8;
+		color: #c1d8da;
 		margin: 0.9rem 0 2.2rem;
 	}
 
 	.skills-board {
-		background: linear-gradient(180deg, #050d1b 0%, #04101f 100%);
-		border: 1px solid rgba(148, 163, 184, 0.2);
+		background: linear-gradient(180deg, #0c4d55 0%, #0a444b 100%);
+		border: 1px solid rgba(23, 183, 148, 0.38);
 		border-radius: 16px;
 		overflow: hidden;
-		box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+		box-shadow: 0 20px 45px rgba(3, 24, 27, 0.35);
 	}
 
 	.skill-category {
 		padding: 1.45rem 1.3rem 1.25rem;
-		border-top: 1px solid rgba(148, 163, 184, 0.3);
+		border-top: 1px solid rgba(183, 243, 232, 0.28);
 	}
 
 	.skill-category.first {
@@ -177,7 +183,7 @@ const skillCategories = [
 		margin: 0;
 		font-size: 1.65rem;
 		font-weight: 700;
-		color: #e8eef9;
+		color: #f1ffff;
 	}
 
 	.category-emoji {
@@ -198,8 +204,8 @@ const skillCategories = [
 		align-items: center;
 		justify-content: center;
 		border-radius: 12px;
-		background: linear-gradient(160deg, #17233a 0%, #202942 100%);
-		border: 1px solid rgba(148, 163, 184, 0.22);
+		background: linear-gradient(160deg, #145b64 0%, #1a6a74 100%);
+		border: 1px solid rgba(183, 243, 232, 0.32);
 	}
 
 	.tile-text {
@@ -212,7 +218,7 @@ const skillCategories = [
 		margin: 0.95rem 0 0;
 		font-size: 1rem;
 		line-height: 1.6;
-		color: #d8e4f7;
+		color: #e2f4f5;
 	}
 
 	.diamond {
@@ -224,6 +230,11 @@ const skillCategories = [
 	@media (max-width: 768px) {
 		.skills {
 			padding: 4rem 1rem;
+		}
+
+		.skills-shell {
+			padding: 1.3rem 0.8rem;
+			border-radius: 16px;
 		}
 
 		.skill-category {
