@@ -64,15 +64,15 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 
 	.hero-grid {
 		display: grid;
-		grid-template-columns: 1.05fr 0.95fr;
-		gap: 2rem;
+		grid-template-columns: 0.95fr 1.05fr;
+		gap: 1.25rem;
 		align-items: center;
 		animation: fadeInUp 1s ease-out;
 	}
 
 	.hero-content {
 		text-align: left;
-		max-width: 620px;
+		max-width: 560px;
 	}
 
 	.hero-kicker {
@@ -162,8 +162,8 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 
 	.image-wrapper {
 		position: relative;
-		width: min(100%, 560px);
-		height: clamp(540px, 72vh, 760px);
+		width: min(100%, 680px);
+		height: min(86vh, 860px);
 		border-radius: 0;
 		overflow: hidden;
 		border: none;
@@ -179,12 +179,13 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		height: 100%;
 		object-fit: contain;
 		object-position: center bottom;
+		transform: scale(1.18);
 		transition: transform 0.35s ease;
 		display: block;
 	}
 
 	.image-wrapper:hover .profile-image {
-		transform: scale(1.03);
+		transform: scale(1.22);
 	}
 
 	@keyframes fadeInUp {
@@ -232,8 +233,12 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		}
 
 		.image-wrapper {
-			width: min(100%, 360px);
-			height: 440px;
+			width: min(100%, 420px);
+			height: 500px;
+		}
+
+		.profile-image {
+			transform: scale(1.08);
 		}
 
 		.hero-title {
@@ -251,8 +256,8 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		}
 
 		.image-wrapper {
-			width: min(100%, 290px);
-			height: 360px;
+			width: min(100%, 320px);
+			height: 390px;
 		}
 
 		.hero-bio {
