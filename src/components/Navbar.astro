@@ -1,18 +1,20 @@
 ---
 const navLinks = [
-	{ name: "Home", href: "#hero" },
-	{ name: "About", href: "#about" },
-	{ name: "Projects", href: "#projects" },
-	{ name: "Skills", href: "#skills" },
-	{ name: "Certificates", href: "#certificates" },
-	{ name: "Contact", href: "#contact" }
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about" },
+	{ name: "Projects", href: "/projects" },
+	{ name: "Skills", href: "/skills" },
+	{ name: "Certificates", href: "/certificates" },
+	{ name: "Contact", href: "/contact" }
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="navbar">
 	<div class="nav-container">
 		<div class="nav-brand">
-			<a href="#hero" class="brand-link">Portfolio</a>
+			<a href="/" class="brand-link">sithara.me</a>
 		</div>
 		
 		<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -24,7 +26,7 @@ const navLinks = [
 		<ul class="nav-menu" id="navMenu">
 			{navLinks.map(link => (
 				<li class="nav-item">
-					<a href={link.href} class="nav-link">{link.name}</a>
+					<a href={link.href} class:list={["nav-link", { active: currentPath === link.href }]}>{link.name}</a>
 				</li>
 			))}
 		</ul>
@@ -69,7 +71,7 @@ const navLinks = [
 		left: 0;
 		width: 100%;
 		z-index: 1000;
-		padding: 1rem 0;
+		padding: 1rem;
 		transition: all 0.3s ease;
 		background: transparent;
 	}
@@ -83,22 +85,29 @@ const navLinks = [
 	.nav-container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0 2rem;
+		padding: 0.8rem 1.4rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 1rem;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 999px;
+		background: rgba(13, 17, 23, 0.72);
+		backdrop-filter: blur(14px);
+		box-shadow: 0 12px 30px rgba(13, 17, 23, 0.32);
 	}
 
 	.nav-brand .brand-link {
-		font-size: 1.5rem;
+		font-size: 1.1rem;
 		font-weight: 700;
-		color: #1f6feb;
+		color: #ffffff;
 		text-decoration: none;
 		transition: color 0.3s ease;
+		letter-spacing: 0.02em;
 	}
 
 	.nav-brand .brand-link:hover {
-		color: #c9d1d9;
+		color: var(--accent);
 	}
 
 	.nav-toggle {
@@ -169,6 +178,14 @@ const navLinks = [
 		color: #1f6feb;
 	}
 
+	.nav-link.active {
+		color: #58a6ff;
+	}
+
+	.nav-link.active::after {
+		width: 100%;
+	}
+
 	.nav-link:hover::after {
 		width: 100%;
 	}
@@ -180,18 +197,19 @@ const navLinks = [
 
 		.nav-menu {
 			position: fixed;
-			top: 0;
+			top: 5.25rem;
 			right: -100%;
-			height: 100vh;
+			height: auto;
 			width: 70%;
 			max-width: 300px;
 			background: rgba(13, 17, 23, 0.98);
 			backdrop-filter: blur(10px);
 			flex-direction: column;
-			padding: 5rem 2rem 2rem;
+			padding: 1.4rem 1.2rem 1.4rem;
 			gap: 1.5rem;
 			transition: right 0.3s ease;
 			box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+			border-radius: 1rem 0 0 1rem;
 		}
 
 		.nav-menu.active {

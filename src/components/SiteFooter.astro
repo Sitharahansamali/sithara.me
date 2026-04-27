@@ -1,0 +1,123 @@
+---
+const socialLinks = [
+	{
+		name: "Email",
+		href: "mailto:hsithara69@gmail.com",
+		svg: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>`
+	},
+	{
+		name: "LinkedIn",
+		href: "https://www.linkedin.com/in/sithara-hansamali-8663a1296/",
+		svg: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>`
+	},
+	{
+		name: "GitHub",
+		href: "https://github.com/Sitharahansamali",
+		svg: `<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>`
+	},
+	{
+		name: "Website",
+		href: "https://sithara.me",
+		svg: `<circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>`
+	}
+];
+---
+
+<footer class="site-footer">
+	<div class="footer-row">
+		<div class="footer-copy">
+			<p>© 2026 Sithara Hansamali. All rights reserved.</p>
+			<a href="https://sithara.me" target="_blank" rel="noopener noreferrer">sithara.me</a>
+		</div>
+
+		<div class="footer-connect">
+			<span>Connect with me</span>
+			<div class="footer-icons">
+				{socialLinks.map((link) => (
+					<a href={link.href} class="footer-icon" aria-label={link.name} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={link.svg}></svg>
+					</a>
+				))}
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		padding: 0 2rem 2rem;
+	}
+
+	.footer-row {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding-top: 1.2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.12);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.footer-copy {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+		color: rgba(255, 255, 255, 0.82);
+	}
+
+	.footer-copy a {
+		text-decoration: none;
+		color: #ffffff;
+		font-weight: 700;
+	}
+
+	.footer-connect {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.footer-icons {
+		display: flex;
+		gap: 0.6rem;
+	}
+
+	.footer-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		background: rgba(22, 27, 34, 0.7);
+		color: #58a6ff;
+		text-decoration: none;
+		transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.footer-icon:hover {
+		transform: translateY(-2px);
+		border-color: rgba(88, 166, 255, 0.55);
+		background: rgba(31, 111, 235, 0.14);
+	}
+
+	.footer-icon svg {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.site-footer {
+			padding-inline: 1rem;
+		}
+
+		.footer-row {
+			align-items: flex-start;
+		}
+	}
+</style>

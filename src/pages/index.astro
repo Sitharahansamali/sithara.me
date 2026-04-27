@@ -2,11 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Skills from '../components/Skills.astro';
-import Certificates from '../components/Certificates.astro';
-import Contact from '../components/Contact.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout 
@@ -15,9 +11,96 @@ import Contact from '../components/Contact.astro';
 >
 	<Navbar />
 	<Hero />
-	<About />
-	<Projects />
-	<Skills />
-	<Certificates />
-	<Contact />
+	<section class="home-links" aria-label="Portfolio sections">
+		<div class="home-links-container">
+			<div class="home-links-header">
+				<p class="eyebrow">Explore</p>
+				<h2>Separate pages for each section</h2>
+				<p>Use the links below to browse each part of the portfolio on its own page.</p>
+			</div>
+
+			<div class="home-links-grid">
+				<a href="/about" class="home-link-card">About</a>
+				<a href="/projects" class="home-link-card">Projects</a>
+				<a href="/skills" class="home-link-card">Skills</a>
+				<a href="/certificates" class="home-link-card">Certificates</a>
+				<a href="/contact" class="home-link-card">Contact</a>
+			</div>
+		</div>
+	</section>
+	<SiteFooter />
 </Layout>
+
+<style>
+	.home-links {
+		padding: 0 2rem 2rem;
+	}
+
+	.home-links-container {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 1.5rem;
+		border-radius: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		background: rgba(13, 17, 23, 0.65);
+		backdrop-filter: blur(14px);
+	}
+
+	.home-links-header {
+		margin-bottom: 1.2rem;
+	}
+
+	.home-links-header .eyebrow {
+		display: inline-block;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding: 0.35rem 0.75rem;
+		margin: 0 0 0.7rem;
+		border-radius: 999px;
+		background: rgba(31, 111, 235, 0.15);
+		color: #58a6ff;
+	}
+
+	.home-links-header h2 {
+		font-size: clamp(1.5rem, 4vw, 2.2rem);
+		margin: 0 0 0.4rem;
+	}
+
+	.home-links-header p {
+		color: #c9d1d9;
+	}
+
+	.home-links-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 0.85rem;
+	}
+
+	.home-link-card {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 76px;
+		border-radius: 16px;
+		border: 1px solid rgba(88, 166, 255, 0.2);
+		background: rgba(22, 27, 34, 0.82);
+		text-decoration: none;
+		font-weight: 700;
+		color: #ffffff;
+		transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.home-link-card:hover {
+		transform: translateY(-3px);
+		border-color: rgba(88, 166, 255, 0.55);
+		background: rgba(31, 111, 235, 0.16);
+	}
+
+	@media (max-width: 768px) {
+		.home-links {
+			padding-inline: 1rem;
+		}
+	}
+</style>
