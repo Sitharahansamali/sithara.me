@@ -10,7 +10,6 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 	<div class="container">
 		<div class="hero-grid">
 			<div class="hero-content">
-				<p class="hero-kicker">HELLO!</p>
 				<h1 class="hero-title">
 					I Am <span class="highlight">{name}</span>
 				</h1>
@@ -24,7 +23,6 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 
 			<div class="hero-image-container">
 				<div class="image-wrapper">
-					<div class="image-backdrop"></div>
 					<img src={profileImage.src} alt={name} class="profile-image" />
 				</div>
 			</div>
@@ -50,7 +48,7 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		position: absolute;
 		inset: 0;
 		background:
-			radial-gradient(circle at 16% 16%, rgba(255, 99, 99, 0.12), transparent 18%),
+			radial-gradient(circle at 16% 16%, rgba(109, 99, 255, 0.097), transparent 18%),
 			radial-gradient(circle at 80% 18%, rgba(255, 99, 99, 0.08), transparent 20%),
 			radial-gradient(circle at 84% 58%, rgba(255, 99, 99, 0.07), transparent 22%);
 		pointer-events: none;
@@ -134,13 +132,13 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 	}
 
 	.btn-primary {
-		background: #ff5a57;
+		background: #5768ff;
 		color: #ffffff;
-		box-shadow: 0 12px 24px rgba(255, 90, 87, 0.25);
+		box-shadow: 0 12px 24px rgba(101, 87, 255, 0.25);
 	}
 
 	.btn-primary:hover {
-		background: #ff6e6b;
+		background: #3d51e6;
 		transform: translateY(-2px);
 	}
 
@@ -167,25 +165,11 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		width: min(100%, 560px);
 		height: clamp(540px, 72vh, 760px);
 		border-radius: 0;
-		overflow: visible;
+		overflow: hidden;
 		border: none;
 		box-shadow: none;
 		background: transparent;
 		animation: float 4s ease-in-out infinite;
-	}
-
-	.image-backdrop {
-		position: absolute;
-		inset: 22px 10px 0 18px;
-		width: 100%;
-		height: 100%;
-		border-radius: 0;
-		background:
-			radial-gradient(circle at 30% 20%, rgba(255, 112, 112, 0.25), transparent 22%),
-			radial-gradient(circle at 82% 26%, rgba(255, 112, 112, 0.14), transparent 18%),
-			linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-		transform: rotate(-1deg);
-		pointer-events: none;
 	}
 
 	.profile-image {
@@ -193,9 +177,10 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		z-index: 1;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		object-position: center top;
+		object-fit: contain;
+		object-position: center bottom;
 		transition: transform 0.35s ease;
+		display: block;
 	}
 
 	.image-wrapper:hover .profile-image {
