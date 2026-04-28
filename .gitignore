@@ -24,4 +24,4 @@ pnpm-debug.log*
 .idea/
 
 #folders 
-src/assets/Certificates/
+src/assets/

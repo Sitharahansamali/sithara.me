@@ -1,4 +1,7 @@
 ---
+import profileImage from '../assets/sithara.png';
+import profileImage2 from '../assets/about-sithara.png';
+
 const about = {
 	intro: "I am a Computer Science undergraduate focused on Artificial Intelligence and Machine Learning.",
 	description: "I build practical software and AI solutions using Python and FastAPI, with a focus on clean engineering and real-world impact.",
@@ -24,6 +27,9 @@ const about = {
 
 		<div class="about-grid">
 			<article class="info-card">
+				<div class="about-photo-wrap">
+					<img src={profileImage2.src} alt="Sithara Hansamali" class="about-photo" />
+				</div>
 				<h3>Profile</h3>
 				<p class="about-intro">{about.intro}</p>
 				<p class="about-description">{about.description}</p>
@@ -90,6 +96,25 @@ const about = {
 		border-radius: 16px;
 		padding: 1.5rem;
 		box-shadow: 0 12px 28px rgba(13, 17, 23, 0.3);
+	}
+
+	.about-photo-wrap {
+		margin-bottom: 1rem;
+		padding: 0.6rem;
+		border-radius: 18px;
+		background: linear-gradient(135deg, rgba(31, 111, 235, 0.18), rgba(56, 189, 248, 0.08));
+		border: 1px solid rgba(31, 111, 235, 0.2);
+	}
+
+	.about-photo {
+		display: block;
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+		border-radius: 14px;
+		object-fit: cover;
+		aspect-ratio: 4 / 5;
+		box-shadow: 0 18px 40px rgba(13, 17, 23, 0.35);
 	}
 
 	.info-card h3 {
