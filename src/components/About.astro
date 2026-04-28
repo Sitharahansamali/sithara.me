@@ -1,0 +1,237 @@
+---
+import profileImage from '../assets/sithara.png';
+import profileImage2 from '../assets/about-sithara.png';
+
+const about = {
+	intro: "I am a Computer Science undergraduate focused on Artificial Intelligence and Machine Learning.",
+	description: "I build practical software and AI solutions using Python and FastAPI, with a focus on clean engineering and real-world impact.",
+	meta: {
+		role: "AI/ML Learner",
+		focus: "Intelligent Systems",
+		status: "Open to Internships"
+	},
+	highlights: [
+		"AI and Machine Learning foundations",
+		"Python and FastAPI project experience",
+		"Strong problem-solving mindset"
+	]
+}
+---
+
+<section id="about" class="about section-shell">
+	<div class="container">
+		<header class="about-header">
+			<p class="eyebrow">Get To Know Me</p>
+			<h2 class="section-title">About</h2>
+		</header>
+
+		<div class="about-grid">
+			<article class="info-card">
+				<div class="about-photo-wrap">
+					<img src={profileImage2.src} alt="Sithara Hansamali" class="about-photo" />
+				</div>
+				<h3>Profile</h3>
+				<p class="about-intro">{about.intro}</p>
+				<p class="about-description">{about.description}</p>
+			</article>
+
+			<aside class="info-card facts" aria-label="About quick facts">
+				<h3>Quick Facts</h3>
+				<ul class="facts-list">
+					<li>
+						<span class="label">Current Role</span>
+						<strong>{about.meta.role}</strong>
+					</li>
+					<li>
+						<span class="label">Core Focus</span>
+						<strong>{about.meta.focus}</strong>
+					</li>
+					<li>
+						<span class="label">Availability</span>
+						<strong>{about.meta.status}</strong>
+					</li>
+				</ul>
+			</aside>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 class="highlights-title">Core Strengths</h3>
+		<ul class="about-highlights">
+			{about.highlights.map((item) => (
+				<li>
+					<span class="dot"></span>
+					<span>{item}</span>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.about {
+		padding: 8rem 2rem 5rem;
+		background: transparent;
+	}
+
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.about-header {
+		margin-bottom: 1.2rem;
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 1rem;
+		align-items: start;
+	}
+
+	.info-card {
+		background: rgba(30, 30, 46, 0.72);
+		border: 1px solid rgba(31, 111, 235, 0.35);
+		border-radius: 16px;
+		padding: 1.5rem;
+		box-shadow: 0 12px 28px rgba(13, 17, 23, 0.3);
+	}
+
+	.about-photo-wrap {
+		margin-bottom: 1rem;
+		padding: 0.6rem;
+		border-radius: 18px;
+		background: linear-gradient(135deg, rgba(31, 111, 235, 0.18), rgba(56, 189, 248, 0.08));
+		border: 1px solid rgba(31, 111, 235, 0.2);
+	}
+
+	.about-photo {
+		display: block;
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+		border-radius: 14px;
+		object-fit: cover;
+		aspect-ratio: 4 / 5;
+		box-shadow: 0 18px 40px rgba(13, 17, 23, 0.35);
+	}
+
+	.info-card h3 {
+		margin: 0 0 0.8rem;
+		font-size: 1.3rem;
+		color: #ffffff;
+	}
+
+	.eyebrow {
+		display: inline-block;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding: 0.35rem 0.75rem;
+		margin: 0 0 0.7rem;
+		border-radius: 999px;
+		background: rgba(31, 111, 235, 0.15);
+		color: #58a6ff;
+	}
+
+	.section-title {
+		font-size: clamp(2rem, 5vw, 2.6rem);
+		margin: 0;
+		color: #ffffff;
+		line-height: 1.1;
+	}
+
+	.about-intro {
+		font-size: 1.08rem;
+		line-height: 1.6;
+		color: #c9d1d9;
+		margin: 0 0 0.8rem;
+	}
+
+	.about-description {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.65;
+		color: #8b949e;
+	}
+
+	.facts-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0.8rem;
+	}
+
+	.facts-list li {
+		padding: 0.95rem 1rem;
+		border-radius: 10px;
+		background: rgba(30, 30, 46, 0.92);
+		border: 1px solid rgba(31, 111, 235, 0.3);
+	}
+
+	.facts-list .label {
+		display: block;
+		font-size: 0.76rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #58a6ff;
+	}
+
+	.facts-list strong {
+		display: block;
+		margin-top: 0.25rem;
+		font-size: 1.08rem;
+		font-weight: 700;
+		color: #c9d1d9;
+	}
+
+	.highlights-title {
+		margin: 1.8rem 0 0.9rem;
+		font-size: 1.35rem;
+		color: #ffffff;
+	}
+
+	.about-highlights {
+		margin-top: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 0.9rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	.about-highlights li {
+		display: flex;
+		gap: 0.7rem;
+		align-items: flex-start;
+		background: rgba(30, 30, 46, 0.8);
+		border: 1px solid rgba(31, 111, 235, 0.25);
+		border-radius: 14px;
+		padding: 0.95rem 1rem;
+		color: #c9d1d9;
+		line-height: 1.5;
+	}
+
+	.about-highlights li .dot {
+		width: 0.6rem;
+		height: 0.6rem;
+		margin-top: 0.45rem;
+		border-radius: 999px;
+		background: #1f6feb;
+		box-shadow: 0 0 0 5px rgba(31, 111, 235, 0.2);
+		flex-shrink: 0;
+	}
+
+	@media (max-width: 900px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.info-card {
+			padding: 1.4rem;
+		}
+	}
+</style>

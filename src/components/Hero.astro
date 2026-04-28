@@ -1,30 +1,30 @@
 ---
-import profileImage from '../assets/FB_IMG_1703424324277.jpg';
+import profileImage from '../assets/sithara.png';
 
-// You can customize these values later!
-const name = "Your Name";
-const title = "Full Stack Developer";
-const bio = "I'm passionate about creating beautiful and functional web applications. I love solving problems and learning new technologies.";
+const name = "Sithara Hansamali";
+const title = "AI Enthusiast | Computer Science Undergraduate";
+const bio = "Passionate about Artificial Intelligence, data-driven solutions, and innovative technologies. I enjoy learning machine learning concepts, building smart systems, and exploring how AI can solve real-world challenges.";
 ---
 
-<section class="hero" id="home">
+<section class="hero" id="hero">
 	<div class="container">
 		<div class="hero-grid">
+			<div class="hero-content">
+				<h1 class="hero-title">
+					I Am <span class="highlight">{name}</span>
+				</h1>
+				<h2 class="hero-subtitle">{title}</h2>
+				<p class="hero-bio">{bio}</p>
+				<div class="hero-cta">
+					<a href="/about" class="btn btn-primary">About Me</a>
+					<a href="/contact" class="btn btn-secondary">Connect With Me</a>
+				</div>
+			</div>
+
 			<div class="hero-image-container">
 				<div class="image-wrapper">
 					<img src={profileImage.src} alt={name} class="profile-image" />
 				</div>
-			</div>
-			<div class="hero-content">
-				<h1 class="hero-title">
-					Hi, I'm <span class="highlight">{name}</span>
-				</h1>
-				<h2 class="hero-subtitle">{title}</h2>
-				<p class="hero-bio">{bio}</p>
-			<div class="hero-cta">
-				<a href="/projects" class="btn btn-primary">View My Work</a>
-				<a href="/contact" class="btn btn-secondary">Get In Touch</a>
-			</div>
 			</div>
 		</div>
 	</div>
@@ -36,97 +36,86 @@ const bio = "I'm passionate about creating beautiful and functional web applicat
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 2rem;
-		background: #1a1a2e;
+		padding: 6rem 1rem 3rem;
+		background: transparent;
 		color: white;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(circle at 16% 16%, rgba(109, 99, 255, 0.097), transparent 18%),
+			radial-gradient(circle at 80% 18%, rgba(255, 99, 99, 0.08), transparent 20%),
+			radial-gradient(circle at 84% 58%, rgba(255, 99, 99, 0.07), transparent 22%);
+		pointer-events: none;
 	}
 
 	.container {
 		max-width: 1200px;
 		width: 100%;
 		margin: 0 auto;
+		position: relative;
+		z-index: 1;
 	}
 
 	.hero-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 4rem;
+		grid-template-columns: 0.95fr 1.05fr;
+		gap: 1.25rem;
 		align-items: center;
 		animation: fadeInUp 1s ease-out;
 	}
 
-	.hero-image-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.image-wrapper {
-		position: relative;
-		width: 350px;
-		height: 350px;
-		border-radius: 50%;
-		overflow: hidden;
-		border: 5px solid #ffd700;
-		box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
-		animation: float 3s ease-in-out infinite;
-	}
-
-	.profile-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.3s ease;
-	}
-
-	.image-wrapper:hover .profile-image {
-		transform: scale(1.1);
-	}
-
 	.hero-content {
 		text-align: left;
+		max-width: 560px;
 	}
 
-	@keyframes float {
-		0%, 100% {
-			transform: translateY(0px);
-		}
-		50% {
-			transform: translateY(-20px);
-		}
+	.hero-kicker {
+		margin: 0 0 1rem;
+		font-size: 1rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #ff6b6b;
 	}
 
 	.hero-title {
-		font-size: 3.5rem;
-		font-weight: 700;
+		font-size: clamp(2.8rem, 6vw, 4.2rem);
+		font-weight: 800;
 		margin-bottom: 1rem;
-		line-height: 1.2;
+		line-height: 1.1;
+		max-width: 12ch;
 	}
 
 	.highlight {
-		color: #ffd700;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		color: #ffffff;
+		text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 	}
 
 	.hero-subtitle {
-		font-size: 2rem;
+		font-size: clamp(1.2rem, 2.6vw, 1.85rem);
 		font-weight: 400;
 		margin-bottom: 1.5rem;
 		color: rgba(255, 255, 255, 0.9);
 	}
 
 	.hero-bio {
-		font-size: 1.25rem;
+		font-size: 1.08rem;
 		line-height: 1.8;
-		max-width: 700px;
-		margin: 0 auto 2.5rem;
+		max-width: 620px;
+		margin: 0 0 2.4rem;
 		color: rgba(255, 255, 255, 0.85);
 	}
 
 	.hero-cta {
 		display: flex;
 		gap: 1rem;
-		justify-content: center;
+		justify-content: flex-start;
 		flex-wrap: wrap;
 	}
 
@@ -134,33 +123,69 @@ const bio = "I'm passionate about creating beautiful and functional web applicat
 		padding: 1rem 2rem;
 		border-radius: 50px;
 		text-decoration: none;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1rem;
 		transition: all 0.3s ease;
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.btn-primary {
-		background: #ffd700;
-		color: #333;
+		background: #5768ff;
+		color: #ffffff;
+		box-shadow: 0 12px 24px rgba(101, 87, 255, 0.25);
 	}
 
 	.btn-primary:hover {
-		background: #ffed4e;
+		background: #3d51e6;
 		transform: translateY(-2px);
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 	}
 
 	.btn-secondary {
-		background: transparent;
-		color: white;
-		border: 2px solid white;
+		background: rgba(255, 255, 255, 0.06);
+		color: #ffffff;
+		border: 1px solid rgba(255, 255, 255, 0.28);
 	}
 
 	.btn-secondary:hover {
-		background: white;
-		color: #667eea;
+		background: rgba(255, 255, 255, 0.12);
 		transform: translateY(-2px);
+	}
+
+	.hero-image-container {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		align-self: end;
+	}
+
+	.image-wrapper {
+		position: relative;
+		width: min(100%, 680px);
+		height: min(86vh, 860px);
+		border-radius: 0;
+		overflow: hidden;
+		border: none;
+		box-shadow: none;
+		background: transparent;
+		animation: float 4s ease-in-out infinite;
+	}
+
+	.profile-image {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center bottom;
+		transform: scale(1.18);
+		transition: transform 0.35s ease;
+		display: block;
+	}
+
+	.image-wrapper:hover .profile-image {
+		transform: scale(1.22);
 	}
 
 	@keyframes fadeInUp {
@@ -174,36 +199,73 @@ const bio = "I'm passionate about creating beautiful and functional web applicat
 		}
 	}
 
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-12px);
+		}
+	}
+
 	@media (max-width: 968px) {
+		.hero {
+			padding-top: 7rem;
+		}
+
 		.hero-grid {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			gap: 2.5rem;
 			text-align: center;
 		}
 
 		.hero-content {
 			text-align: center;
-		}
-
-		.image-wrapper {
-			width: 280px;
-			height: 280px;
-		}
-
-		.hero-title {
-			font-size: 2.5rem;
-		}
-
-		.hero-subtitle {
-			font-size: 1.5rem;
-		}
-
-		.hero-bio {
-			font-size: 1.1rem;
+			max-width: none;
 		}
 
 		.hero-cta {
 			justify-content: center;
+		}
+
+		.hero-image-container {
+			justify-content: center;
+		}
+
+		.image-wrapper {
+			width: min(100%, 420px);
+			height: 500px;
+		}
+
+		.profile-image {
+			transform: scale(1.08);
+		}
+
+		.hero-title {
+			max-width: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.hero {
+			padding-inline: 1rem;
+		}
+
+		.hero-title {
+			font-size: 2.35rem;
+		}
+
+		.image-wrapper {
+			width: min(100%, 320px);
+			height: 390px;
+		}
+
+		.hero-bio {
+			font-size: 1rem;
+		}
+
+		.btn {
+			width: 100%;
 		}
 	}
 </style>
