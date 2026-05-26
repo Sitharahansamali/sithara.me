@@ -1,6 +1,5 @@
 ---
-import profileImage from '../assets/sithara.png';
-import profileImage2 from '../assets/about-sithara.png';
+import profileImage2 from '../assets/about-sithara.jpg';
 
 const about = {
 	intro: "I am a Computer Science undergraduate focused on Artificial Intelligence and Machine Learning.",
@@ -100,21 +99,36 @@ const about = {
 
 	.about-photo-wrap {
 		margin-bottom: 1rem;
-		padding: 0.6rem;
-		border-radius: 18px;
-		background: linear-gradient(135deg, rgba(31, 111, 235, 0.18), rgba(56, 189, 248, 0.08));
-		border: 1px solid rgba(31, 111, 235, 0.2);
+		padding: 0.85rem;
+		border-radius: 50%;
+		background:
+			radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.18), transparent 45%),
+			rgba(13, 17, 23, 0.72);
+		border: 1px solid rgba(88, 166, 255, 0.22);
+		box-shadow:
+			0 20px 48px rgba(0, 0, 0, 0.32),
+			0 0 0 10px rgba(31, 111, 235, 0.08);
+		aspect-ratio: 1;
+		max-width: 440px;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
 	}
 
 	.about-photo {
 		display: block;
 		width: 100%;
-		max-width: 320px;
-		margin: 0 auto;
-		border-radius: 14px;
+		height: 100%;
+		border-radius: 50%;
 		object-fit: cover;
-		aspect-ratio: 4 / 5;
-		box-shadow: 0 18px 40px rgba(13, 17, 23, 0.35);
+		object-position: center top;
+		transform: scale(1.04);
+		transition: transform 0.35s ease;
+		box-shadow: none;
+	}
+
+	.about-photo-wrap:hover .about-photo {
+		transform: scale(1.08);
 	}
 
 	.info-card h3 {
@@ -232,6 +246,17 @@ const about = {
 
 		.info-card {
 			padding: 1.4rem;
+		}
+
+		.about-photo-wrap {
+			max-width: 360px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.about-photo-wrap {
+			max-width: 300px;
+			padding: 0.7rem;
 		}
 	}
 </style>

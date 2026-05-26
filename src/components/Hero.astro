@@ -1,5 +1,5 @@
 ---
-import profileImage from '../assets/sithara.png';
+import profileImage from '../assets/sithara.jpg';
 
 const name = "Sithara Hansamali";
 const title = "AI Enthusiast | Computer Science Undergraduate";
@@ -16,7 +16,7 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 				<h2 class="hero-subtitle">{title}</h2>
 				<p class="hero-bio">{bio}</p>
 				<div class="hero-cta">
-					<a href="/about" class="btn btn-primary">About Me</a>
+					<a href="/resume.pdf" class="btn btn-primary" download>Download CV</a>
 					<a href="/contact" class="btn btn-secondary">Connect With Me</a>
 				</div>
 			</div>
@@ -85,16 +85,20 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 	}
 
 	.hero-title {
-		font-size: clamp(2.8rem, 6vw, 4.2rem);
-		font-weight: 800;
+		font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+		font-size: clamp(3.2rem, 7vw, 5rem);
+		font-weight: 900;
 		margin-bottom: 1rem;
-		line-height: 1.1;
-		max-width: 12ch;
+		line-height: 0.98;
+		letter-spacing: -0.04em;
+		max-width: 10ch;
 	}
 
 	.highlight {
 		color: #ffffff;
 		text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+		font-family: inherit;
+		font-size: 1em;
 	}
 
 	.hero-subtitle {
@@ -162,13 +166,17 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 
 	.image-wrapper {
 		position: relative;
-		width: min(100%, 680px);
-		height: min(86vh, 860px);
-		border-radius: 0;
+		width: min(100%, 500px);
+		aspect-ratio: 1;
+		border-radius: 50%;
 		overflow: hidden;
-		border: none;
-		box-shadow: none;
-		background: transparent;
+		border: 1px solid rgba(88, 166, 255, 0.22);
+		box-shadow:
+			0 24px 60px rgba(0, 0, 0, 0.35),
+			0 0 0 12px rgba(31, 111, 235, 0.08);
+		background:
+			radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.16), transparent 45%),
+			rgba(13, 17, 23, 0.72);
 		animation: float 4s ease-in-out infinite;
 	}
 
@@ -177,15 +185,15 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		z-index: 1;
 		width: 100%;
 		height: 100%;
-		object-fit: contain;
-		object-position: center bottom;
-		transform: scale(1.18);
+		object-fit: cover;
+		object-position: center top;
+		transform: scale(1.02);
 		transition: transform 0.35s ease;
 		display: block;
 	}
 
 	.image-wrapper:hover .profile-image {
-		transform: scale(1.22);
+		transform: scale(1.06);
 	}
 
 	@keyframes fadeInUp {
@@ -234,11 +242,10 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 
 		.image-wrapper {
 			width: min(100%, 420px);
-			height: 500px;
 		}
 
 		.profile-image {
-			transform: scale(1.08);
+			transform: scale(1.01);
 		}
 
 		.hero-title {
@@ -256,12 +263,15 @@ const bio = "Passionate about Artificial Intelligence, data-driven solutions, an
 		}
 
 		.image-wrapper {
-			width: min(100%, 320px);
-			height: 390px;
+			width: min(92vw, 360px);
 		}
 
 		.hero-bio {
 			font-size: 1rem;
+		}
+
+		.profile-image {
+			transform: scale(1);
 		}
 
 		.btn {
