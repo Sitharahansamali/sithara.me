@@ -23,6 +23,13 @@ const stats = [
 
 <section id="about" class="px-4 py-24 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-6xl">
+    <MotionReveal client:visible className="mx-auto mb-6 max-w-2xl text-center">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-description">
+        A focused view of my background, strengths, and the direction I’m building toward.
+      </p>
+    </MotionReveal>
+
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-5">
       <MotionReveal client:visible delay={0.1} className="lg:col-span-2">
         <article class="about-panel h-full rounded-2xl border border-(--border) bg-(--surface) p-6">
@@ -78,4 +85,18 @@ const stats = [
     transform: translateY(-4px);
     border-color: rgba(88, 166, 255, 0.42);
   }
+
+  .section-title {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
+	}
+
+	.section-description {
+		text-align: center;
+		font-size: 1rem;
+		color: #8b949e;
+		margin-bottom: 1.8rem;
+	}
 </style>

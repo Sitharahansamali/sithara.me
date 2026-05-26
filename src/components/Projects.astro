@@ -34,6 +34,13 @@ const projects = [
 
 <section id="projects" class="relative px-4 py-24 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-6xl">
+    <MotionReveal client:visible className="mx-auto mb-6 max-w-2xl text-center">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-description">
+        A snapshot of practical builds, experiments, and problem-solving work from my portfolio.
+      </p>
+    </MotionReveal>
+
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
       {projects.map((project, index) => (
         <MotionReveal client:visible delay={0.08 * index}>
@@ -92,4 +99,19 @@ const projects = [
     border-color: rgba(88, 166, 255, 0.48);
     box-shadow: 0 26px 56px rgba(0, 0, 0, 0.38);
   }
+
+  .section-title {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
+	}
+
+	.section-description {
+		text-align: center;
+		font-size: 1rem;
+		color: #8b949e;
+		margin-bottom: 1.8rem;
+	} 
+    
 </style>
