@@ -3,8 +3,10 @@ import MotionReveal from './motion/MotionReveal';
 
 const contactInfo = {
 	email: "sitharah.me@gmail.com",
-	phone: "+1 (555) 123-4567",
-	location: "San Francisco, CA"
+	phone: "+94 77 520 9369",
+	location: "Middeniya, Sri Lanka",
+	major: "Artificial Intelligence and Machine Learning",
+	graduation: "2027"
 };
 ---
 
@@ -12,9 +14,9 @@ const contactInfo = {
 	<div class="contact-container">
 		{/* Left Column */}
 		<MotionReveal client:visible delay={0.1} className="contact-left">
-			<h2 class="contact-title">Let's Create Something Amazing</h2>
+			<h2 class="contact-title">Let's Start My Journey</h2>
 			<p class="contact-subtitle">
-				Ready to bring your vision to life? Whether you need stunning 3D visuals, captivating animations, or innovative game development, I'm here to help transform your ideas into reality.
+				I'm an undergraduate student passionate about AI/ML and looking for internship opportunities to grow my skills and contribute to innovative projects. Let's connect and explore how I can add value to your team!
 			</p>
 
 			<div class="contact-info-list">
@@ -55,7 +57,18 @@ const contactInfo = {
 						<span>{contactInfo.location}</span>
 					</div>
 				</div>
-			</div>
+					<div class="info-item">
+						<div class="info-icon major-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+								<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+							</svg>
+						</div>
+						<div class="info-content">
+							<h4>Major</h4>
+							<span>{contactInfo.major}</span>
+						</div>
+					</div>			</div>
 
 			<div class="social-icons-bottom">
 				<a href="https://github.com/Sitharahansamali" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
@@ -92,23 +105,34 @@ const contactInfo = {
 					<input type="email" id="email" name="email" placeholder="john@example.com" required />
 				</div>
 
-				<div class="form-group">
-					<label for="projectType">Project Type</label>
-					<select id="projectType" name="projectType" required>
-						<option value="">Select Project Type</option>
-						<option value="3d-modeling">3D Modeling</option>
-						<option value="animation">Animation</option>
-						<option value="game-dev">Game Development</option>
-						<option value="other">Other</option>
-					</select>
+				<div class="form-row">
+					<div class="form-group">
+						<label for="internshipType">Internship Type</label>
+						<select id="internshipType" name="internshipType" required>
+							<option value="">Select Type</option>
+							<option value="full-time">Full-time</option>
+							<option value="part-time">Part-time</option>
+							<option value="hybrid">Hybrid</option>
+							<option value="remote">Remote</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="startDate">Expected Start Date</label>
+						<input type="month" id="startDate" name="startDate" required />
+					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea id="message" name="message" placeholder="Tell me about your project..." rows="6" required></textarea>
+					<label for="focus">Internship Focus Areas</label>
+					<textarea id="focus" name="focus" placeholder="e.g., Machine Learning, Data Analysis, AI Development..." rows="3" required></textarea>
 				</div>
 
-				<button type="submit" class="submit-button">Send Message</button>
+				<div class="form-group">
+					<label for="message">Additional Information</label>
+					<textarea id="message" name="message" placeholder="Tell me about the opportunity, your expectations, or any other details..." rows="4" required></textarea>
+				</div>
+
+				<button type="submit" class="submit-button">Send Application</button>
 			</form>
 		</MotionReveal>
 	</div>
@@ -116,12 +140,17 @@ const contactInfo = {
 
 <style>
 	.contact-section {
-		padding: 6rem 2rem 4rem;
+		padding: 8rem 2rem 8rem;
 		background: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
 	}
 
 	.contact-container {
-		max-width: 1400px;
+		max-width: 1200px;
+		width: 100%;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -236,12 +265,13 @@ const contactInfo = {
 
 	/* Right Column - Form */
 	.contact-right {
-		padding: 3rem;
-		border-radius: 24px;
-		background: rgba(22, 27, 34, 0.6);
-		border: 1px solid rgba(88, 166, 255, 0.2);
-		backdrop-filter: blur(10px);
-		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+		padding: 3.5rem;
+		border-radius: 28px;
+		background: rgba(13, 17, 23, 0.85);
+		border: 2.5px solid rgba(88, 166, 255, 0.4);
+		backdrop-filter: blur(15px);
+		box-shadow: 0 0 40px rgba(88, 166, 255, 0.2), 0 0 80px rgba(88, 166, 255, 0.1), 0 20px 70px rgba(0, 0, 0, 0.5);
+		transition: all 0.3s ease;
 	}
 
 	.contact-form {
