@@ -11,11 +11,19 @@ const contactInfo = {
 ---
 
 <section id="contact" class="contact-section">
-	<div class="contact-container">
-		{/* Left Column */}
-		<MotionReveal client:visible delay={0.1} className="contact-left">
-			<h2 class="contact-title">Let's Start My Journey</h2>
-			<p class="contact-subtitle">
+	<div class="mx-auto max-w-6xl px-4">
+		<MotionReveal client:visible className="mx-auto mb-12 max-w-2xl text-center">
+			<h2 class="section-title">Contact</h2>
+			<p class="section-description">
+				Interested in internship opportunities? Let's connect! I'm eager to learn, contribute, and grow with your team.
+			</p>
+		</MotionReveal>
+
+		<div class="contact-container">
+			{/* Left Column */}
+			<MotionReveal client:visible delay={0.1} className="contact-left">
+				<h2 class="contact-subtitle-main">Let's Start My Journey</h2>
+				<p class="contact-subtitle">
 				I'm an undergraduate student passionate about AI/ML and looking for internship opportunities to grow my skills and contribute to innovative projects. Let's connect and explore how I can add value to your team!
 			</p>
 
@@ -88,7 +96,7 @@ const contactInfo = {
 
 		{/* Right Column - Form */}
 		<MotionReveal client:visible delay={0.2} className="contact-right">
-			<form class="contact-form" onsubmit="handleFormSubmit(event)">
+			<form class="contact-form" action="https://formspree.io/f/xbdbpddq" method="POST">
 				<div class="form-row">
 					<div class="form-group">
 						<label for="firstName">First Name</label>
@@ -135,17 +143,14 @@ const contactInfo = {
 				<button type="submit" class="submit-button">Send Application</button>
 			</form>
 		</MotionReveal>
+		</div>
 	</div>
 </section>
 
 <style>
 	.contact-section {
-		padding: 8rem 2rem 8rem;
+		padding: 6rem 2rem 8rem;
 		background: transparent;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 100vh;
 	}
 
 	.contact-container {
@@ -165,19 +170,38 @@ const contactInfo = {
 		gap: 2rem;
 	}
 
-	.contact-title {
-		font-size: 2.8rem;
+	.contact-subtitle-main {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #fff;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		margin-bottom: 1rem;
+	}
+
+	.contact-subtitle {
+		font-size: 1rem;
+		color: #8b949e;
+		line-height: 1.6;
+		max-width: 90%;
+		margin-bottom: 2rem;
+	}
+
+	/* Section Header */
+	.section-title {
+		font-size: 2.2rem;
 		font-weight: 800;
 		color: #fff;
 		line-height: 1.2;
 		letter-spacing: -0.02em;
+		margin-bottom: 0.75rem;
 	}
 
-	.contact-subtitle {
-		font-size: 1.05rem;
+	.section-description {
+		font-size: 1rem;
 		color: #8b949e;
 		line-height: 1.6;
-		max-width: 90%;
+		max-width: 100%;
 	}
 
 	.contact-info-list {
