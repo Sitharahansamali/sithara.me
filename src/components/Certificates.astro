@@ -1,4 +1,5 @@
 ---
+import MotionReveal from './motion/MotionReveal';
 const certificates = [
 	{
 		title: "Get Started with Anaconda",
@@ -64,20 +65,24 @@ const certificates = [
 ---
 
 <section id="certificates" class="certificates">
-	<div class="container">
-		<h2 class="section-title">Certificates</h2>
-		<p class="section-description">Selected certifications that support my technical journey.</p>
+		<div class="container">
+				<MotionReveal client:visible className="mx-auto mb-6 max-w-2xl text-center">
+					<h2 class="section-title">Certificates</h2>
+					<p class="section-description">Selected certifications that support my technical journey.</p>
+				</MotionReveal>
 
 		<div class="cert-grid">
-			{certificates.map(cert => (
-				<article class="cert-card">
+			{certificates.map((cert, idx) => (
+				<MotionReveal client:visible delay={0.04 * idx}>
+				  <article class="cert-card">
 					<div class="cert-meta">
 						<span class="cert-year">{cert.year}</span>
 						<span class="cert-issuer">{cert.issuer}</span>
 					</div>
 					<h3>{cert.title}</h3>
 					<a href={cert.link} class="cert-link" target="_blank" rel="noopener noreferrer">View Credential</a>
-				</article>
+				  </article>
+				</MotionReveal>
 			))}
 		</div>
 	</div>
@@ -96,16 +101,16 @@ const certificates = [
 
 	.section-title {
 		text-align: center;
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
 		color: #fff;
 	}
 
 	.section-description {
 		text-align: center;
-		font-size: 1.1rem;
+		font-size: 1rem;
 		color: #8b949e;
-		margin-bottom: 2.2rem;
+		margin-bottom: 1.8rem;
 	}
 
 	.cert-grid {

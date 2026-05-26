@@ -1,266 +1,172 @@
 ---
+import MotionReveal from './motion/MotionReveal';
+
 const skillCategories = [
-	{
-		title: "Programming Languages",
-		accent: "#63b3ff",
-		items: [
-			{ name: "Python", icon: "🐍", color: "#ffd43b" },
-			{ name: "Java", icon: "☕", color: "#f89820" },
-			{ name: "C", icon: "C", color: "#7cb8ff" },
-			{ name: "C#", icon: "C#", color: "#d585ff" }
-		]
-	},
-	{
-		title: "Frontend Development",
-		accent: "#5eead4",
-		items: [
-			{ name: "HTML", icon: "H", color: "#ff7f50" },
-			{ name: "CSS", icon: "C", color: "#4ea8ff" },
-			{ name: "JavaScript", icon: "JS", color: "#ffe066" },
-			{ name: "React", icon: "⚛", color: "#61dafb" },
-			{ name: "Astro", icon: "A", color: "#ff8f66" }
-		]
-	},
-	{
-		title: "Backend Development",
-		accent: "#93c5fd",
-		items: [
-			{ name: "FastAPI", icon: "F", color: "#4ade80" },
-			{ name: "REST APIs", icon: "API", color: "#93c5fd" },
-			{ name: "PHP", icon: "php", color: "#c4b5fd" }
-		]
-	},
-	{
-		title: "Machine Learning & Data Science",
-		accent: "#fca5a5",
-		items: [
-			{ name: "Scikit-learn", icon: "SK", color: "#fb923c" },
-			{ name: "TensorFlow", icon: "TF", color: "#f59e0b" },
-			{ name: "PyTorch", icon: "PT", color: "#fb7185" },
-			{ name: "Pandas", icon: "PD", color: "#c4b5fd" },
-			{ name: "NumPy", icon: "NP", color: "#93c5fd" },
-			{ name: "Matplotlib", icon: "MP", color: "#fca5a5" },
-			{ name: "OpenCV", icon: "CV", color: "#86efac" }
-		]
-	},
-	{
-		title: "Cloud & AI Platforms",
-		accent: "#7dd3fc",
-		items: [
-			{ name: "AWS", icon: "AWS", color: "#fbbf24" },
-			{ name: "Microsoft Azure", icon: "AZ", color: "#7dd3fc" },
-			{ name: "Docker Hub", icon: "DH", color: "#60a5fa" },
-			{ name: "Hugging Face", icon: "HF", color: "#fde68a" },
-			{ name: "Google Colab", icon: "GC", color: "#fb923c" }
-		]
-	},
-	{
-		title: "Tools & Development Environment",
-		accent: "#6ee7b7",
-		items: [
-			{ name: "Git", icon: "Git", color: "#f87171" },
-			{ name: "GitHub", icon: "GH", color: "#d1d5db" },
-			{ name: "VS Code", icon: "VS", color: "#60a5fa" },
-			{ name: "Jupyter Notebook", icon: "JP", color: "#fb923c" },
-			{ name: "Anaconda", icon: "AC", color: "#4ade80" },
-			{ name: "Docker", icon: "DK", color: "#7dd3fc" },
-			{ name: "Linux", icon: "🐧", color: "#fde68a" }
-		]
-	},
-	{
-		title: "Design & Productivity Tools",
-		accent: "#f9a8d4",
-		items: [
-			{ name: "Figma", icon: "Fg", color: "#f472b6" },
-			{ name: "Canva", icon: "Cv", color: "#67e8f9" }
-		]
-	},
-	{
-		title: "Databases",
-		accent: "#a7f3d0",
-		items: [
-			{ name: "MongoDB", icon: "MG", color: "#86efac" },
-			{ name: "PostgreSQL", icon: "PG", color: "#93c5fd" },
-			{ name: "MySQL", icon: "MY", color: "#93c5fd" },
-			{ name: "SQLite", icon: "SQ", color: "#d1d5db" },
-			{ name: "Supabase", icon: "SB", color: "#86efac" }
-		]
-	},
-	{
-		title: "Automation / Other Technologies",
-		accent: "#c4b5fd",
-		items: [{ name: "n8n", icon: "n8n", color: "#fca5a5" }]
-	}
+  {
+    title: 'Programming Languages',
+    accent: '#63b3ff',
+    items: [
+      { name: 'Python', icon: 'PY' },
+      { name: 'Java', icon: 'JV' },
+      { name: 'C', icon: 'C' },
+      { name: 'C#', icon: 'C#' }
+    ]
+  },
+  {
+    title: 'Frontend Development',
+    accent: '#5eead4',
+    items: [
+      { name: 'HTML', icon: 'H' },
+      { name: 'CSS', icon: 'C' },
+      { name: 'JavaScript', icon: 'JS' },
+      { name: 'React', icon: 'R' },
+      { name: 'Astro', icon: 'AS' }
+    ]
+  },
+  {
+    title: 'Backend Development',
+    accent: '#93c5fd',
+    items: [
+      { name: 'FastAPI', icon: 'FA' },
+      { name: 'REST APIs', icon: 'API' },
+      { name: 'PHP', icon: 'PHP' }
+    ]
+  },
+  {
+    title: 'Machine Learning & Data Science',
+    accent: '#fca5a5',
+    items: [
+      { name: 'Scikit-learn', icon: 'SK' },
+      { name: 'TensorFlow', icon: 'TF' },
+      { name: 'PyTorch', icon: 'PT' },
+      { name: 'Pandas', icon: 'PD' },
+      { name: 'NumPy', icon: 'NP' },
+      { name: 'Matplotlib', icon: 'MP' },
+      { name: 'OpenCV', icon: 'CV' }
+    ]
+  },
+  {
+    title: 'Cloud & AI Platforms',
+    accent: '#7dd3fc',
+    items: [
+      { name: 'AWS', icon: 'AWS' },
+      { name: 'Azure', icon: 'AZ' },
+      { name: 'Docker Hub', icon: 'DH' },
+      { name: 'Hugging Face', icon: 'HF' },
+      { name: 'Google Colab', icon: 'GC' }
+    ]
+  },
+  {
+    title: 'Tools & Environment',
+    accent: '#6ee7b7',
+    items: [
+      { name: 'Git', icon: 'G' },
+      { name: 'GitHub', icon: 'GH' },
+      { name: 'VS Code', icon: 'VS' },
+      { name: 'Jupyter', icon: 'JP' },
+      { name: 'Linux', icon: 'LX' }
+    ]
+  },
+  {
+    title: 'Design & Productivity',
+    accent: '#f9a8d4',
+    items: [
+      { name: 'Figma', icon: 'FG' },
+      { name: 'Canva', icon: 'CV' }
+    ]
+  },
+  {
+    title: 'Databases',
+    accent: '#a7f3d0',
+    items: [
+      { name: 'MongoDB', icon: 'MG' },
+      { name: 'PostgreSQL', icon: 'PG' },
+      { name: 'MySQL', icon: 'MY' },
+      { name: 'SQLite', icon: 'SQ' },
+      { name: 'Supabase', icon: 'SB' }
+    ]
+  }
 ];
 ---
 
-<section id="skills" class="skills">
-	<div class="container">
-		<div class="skills-shell">
-			<h2 class="section-title">Skills</h2>
-			<p class="section-description">A technical snapshot of my development stack and tools.</p>
+<section id="skills" class="px-4 py-24 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-6xl">
+    <MotionReveal client:visible className="mx-auto mb-6 max-w-2xl text-center">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-description">
+        The stack I use for software development, AI work, and everyday productivity.
+      </p>
+    </MotionReveal>
 
-			<div class="skills-board">
-				{skillCategories.map((category, index) => (
-					<article class={`skill-category ${index === 0 ? "first" : ""}`} style={`--accent: ${category.accent};`}>
-						<h3 class="category-heading">
-							<span>{category.title}</span>
-						</h3>
-
-						<div class="icon-row">
-							{category.items.map((item) => (
-								<div class="icon-tile" aria-label={item.name} title={item.name}>
-									<span class="tile-text" style={`color: ${item.color};`}>{item.icon}</span>
-								</div>
-							))}
-						</div>
-
-						<p class="category-line">
-							<span class="diamond">◆</span>
-							{category.items.map((item) => item.name).join(", ")}
-						</p>
-					</article>
-				))}
-			</div>
-		</div>
-	</div>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {skillCategories.map((category, categoryIndex) => (
+        <MotionReveal client:visible delay={0.05 * categoryIndex}>
+          <article class="skill-card rounded-2xl border border-(--border) bg-(--surface) p-5" style={`--card-accent: ${category.accent};`}>
+            <h3 class="text-lg font-bold text-white">{category.title}</h3>
+            <div class="mt-4 flex flex-wrap gap-2.5">
+              {category.items.map((item, itemIndex) => (
+                <span
+                  class="skill-pill inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0d1117]/80 px-3 py-1.5 text-xs font-semibold text-slate-200"
+                  style={`animation-delay: ${itemIndex * 65}ms;`}
+                >
+                  <span class="pill-icon inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-(--card-accent)/20 px-1 text-[10px] font-bold text-(--card-accent)">
+                    {item.icon}
+                  </span>
+                  {item.name}
+                </span>
+              ))}
+            </div>
+          </article>
+        </MotionReveal>
+      ))}
+    </div>
+  </div>
 </section>
 
 <style>
-	.skills {
-		padding: 8rem 1.5rem 5rem;
-		background: transparent;
-	}
+  .skill-card {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
 
-	.container {
-		max-width: 1180px;
-		margin: 0 auto;
-	}
+  .skill-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--card-accent) 50%, transparent);
+  }
 
-	.skills-shell {
-		padding: 2.5rem 2rem;
-		border-radius: 22px;
-		background:
-			radial-gradient(circle at 20% 0%, rgba(31, 111, 235, 0.15), transparent 45%),
-			linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-		border: 1px solid rgba(31, 111, 235, 0.25);
-		box-shadow: 0 22px 50px rgba(13, 17, 23, 0.4);
-		margin: 0 auto;
-	}
+  .skill-pill {
+    animation: pillIn 0.45s ease both;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
 
-	.section-title {
+  .skill-pill:hover {
+    border-color: color-mix(in srgb, var(--card-accent) 58%, transparent);
+    transform: translateY(-1px);
+  }
+
+  @keyframes pillIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .section-title {
 		text-align: center;
-		font-size: clamp(2rem, 5vw, 2.5rem);
-		margin: 0;
-		color: #ffffff;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
 	}
 
 	.section-description {
 		text-align: center;
 		font-size: 1rem;
 		color: #8b949e;
-		margin: 0.9rem 0 2.2rem;
+		margin-bottom: 1.8rem;
 	}
-
-	.skills-board {
-		background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-		border: 1px solid rgba(31, 111, 235, 0.25);
-		border-radius: 16px;
-		overflow: hidden;
-		box-shadow: 0 20px 45px rgba(13, 17, 23, 0.35);
-	}
-
-	.skill-category {
-		padding: 1.45rem 1.3rem 1.25rem;
-		border-top: 1px solid rgba(31, 111, 235, 0.2);
-		text-align: center;
-	}
-
-	.skill-category.first {
-		border-top: none;
-	}
-
-	.category-heading {
-		display: flex;
-		align-items: center;
-		gap: 0.55rem;
-		margin: 0;
-		font-size: 1.65rem;
-		font-weight: 700;
-		color: #c9d1d9;
-	}
-
-	.category-emoji {
-		font-size: 1.15rem;
-	}
-
-	.icon-row {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.55rem;
-		margin-top: 0.9rem;
-		justify-content: center;
-	}
-
-	.icon-tile {
-		width: 56px;
-		height: 56px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 12px;
-		background: linear-gradient(160deg, #0d1117 0%, #161b22 100%);
-		border: 1px solid rgba(31, 111, 235, 0.25);
-	}
-
-	.tile-text {
-		font-size: 1.25rem;
-		font-weight: 800;
-		letter-spacing: 0.01em;
-	}
-
-	.category-line {
-		margin: 0.95rem 0 0;
-		font-size: 1rem;
-		line-height: 1.6;
-		color: #c9d1d9;
-	}
-
-	.diamond {
-		color: var(--accent);
-		margin-right: 0.5rem;
-		font-size: 0.8rem;
-	}
-
-	@media (max-width: 768px) {
-		.skills {
-			padding: 4rem 1rem;
-		}
-
-		.skills-shell {
-			padding: 1.3rem 0.8rem;
-			border-radius: 16px;
-		}
-
-		.skill-category {
-			padding: 1.1rem 0.9rem 1rem;
-		}
-
-		.category-heading {
-			font-size: 1.1rem;
-		}
-
-		.icon-tile {
-			width: 50px;
-			height: 50px;
-		}
-
-		.tile-text {
-			font-size: 1.05rem;
-		}
-
-		.category-line {
-			font-size: 0.95rem;
-		}
-	}
+    
 </style>

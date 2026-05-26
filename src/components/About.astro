@@ -1,262 +1,102 @@
 ---
 import profileImage2 from '../assets/about-sithara.jpg';
+import MotionReveal from './motion/MotionReveal';
 
 const about = {
-	intro: "I am a Computer Science undergraduate focused on Artificial Intelligence and Machine Learning.",
-	description: "I build practical software and AI solutions using Python and FastAPI, with a focus on clean engineering and real-world impact.",
-	meta: {
-		role: "AI/ML Learner",
-		focus: "Intelligent Systems",
-		status: "Open to Internships"
-	},
-	highlights: [
-		"AI and Machine Learning foundations",
-		"Python and FastAPI project experience",
-		"Strong problem-solving mindset"
-	]
-}
+  intro: 'I am a Computer Science undergraduate focused on Artificial Intelligence and Machine Learning.',
+  description:
+    'I build practical software and AI solutions using Python and FastAPI, with a focus on clean engineering, scalability, and real-world impact.',
+  highlights: [
+    'AI and Machine Learning foundations',
+    'Python and FastAPI project experience',
+    'Strong problem-solving mindset',
+    'Open to internship and collaboration opportunities'
+  ]
+};
+
+const stats = [
+  { label: 'Projects Built', value: '12+' },
+  { label: 'Core Technologies', value: '20+' },
+  { label: 'Learning Streak', value: '2+ Years' }
+];
 ---
 
-<section id="about" class="about section-shell">
-	<div class="container">
-		<header class="about-header">
-			<p class="eyebrow">Get To Know Me</p>
-			<h2 class="section-title">About</h2>
-		</header>
+<section id="about" class="px-4 py-24 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-6xl">
+    <MotionReveal client:visible className="mx-auto mb-6 max-w-2xl text-center">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-description">
+        A focused view of my background, strengths, and the direction I’m building toward.
+      </p>
+    </MotionReveal>
 
-		<div class="about-grid">
-			<article class="info-card">
-				<div class="about-photo-wrap">
-					<img src={profileImage2.src} alt="Sithara Hansamali" class="about-photo" />
-				</div>
-				<h3>Profile</h3>
-				<p class="about-intro">{about.intro}</p>
-				<p class="about-description">{about.description}</p>
-			</article>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-5">
+      <MotionReveal client:visible delay={0.1} className="lg:col-span-2">
+        <article class="about-panel h-full rounded-2xl border border-(--border) bg-(--surface) p-6">
+          <div class="mx-auto w-full max-w-xs overflow-hidden rounded-3xl border border-white/10 bg-[#0d1117] p-2 shadow-[0_18px_45px_rgba(0,0,0,0.32)]">
+            <img src={profileImage2.src} alt="Sithara Hansamali" class="h-full w-full rounded-2xl object-cover" loading="lazy" />
+          </div>
 
-			<aside class="info-card facts" aria-label="About quick facts">
-				<h3>Quick Facts</h3>
-				<ul class="facts-list">
-					<li>
-						<span class="label">Current Role</span>
-						<strong>{about.meta.role}</strong>
-					</li>
-					<li>
-						<span class="label">Core Focus</span>
-						<strong>{about.meta.focus}</strong>
-					</li>
-					<li>
-						<span class="label">Availability</span>
-						<strong>{about.meta.status}</strong>
-					</li>
-				</ul>
-			</aside>
-		</div>
-	</div>
+          <div class="mt-6 space-y-3">
+            <h3 class="text-xl font-bold text-white">Computer Science Undergraduate</h3>
+            <p class="text-sm leading-7 text-slate-400">{about.intro}</p>
+          </div>
+        </article>
+      </MotionReveal>
 
-	<div class="container">
-		<h3 class="highlights-title">Core Strengths</h3>
-		<ul class="about-highlights">
-			{about.highlights.map((item) => (
-				<li>
-					<span class="dot"></span>
-					<span>{item}</span>
-				</li>
-			))}
-		</ul>
-	</div>
+      <div class="grid grid-cols-1 gap-6 lg:col-span-3">
+        <MotionReveal client:visible delay={0.2}>
+          <article class="about-panel rounded-2xl border border-(--border) bg-(--surface) p-6">
+            <h3 class="text-xl font-bold text-white">Professional Summary</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">{about.description}</p>
+
+            <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+              {about.highlights.map((item) => (
+                <li class="rounded-xl border border-white/10 bg-[#0d1117]/70 px-4 py-3 text-sm text-slate-300">
+                  <span class="mr-2 inline-block h-2 w-2 rounded-full bg-(--accent)"></span>{item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </MotionReveal>
+
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {stats.map((stat, index) => (
+            <MotionReveal client:visible delay={0.28 + index * 0.08}>
+              <article class="about-panel rounded-2xl border border-(--border) bg-(--surface) p-5 text-center">
+                <p class="text-3xl font-black text-(--accent)">{stat.value}</p>
+                <p class="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-slate-400">{stat.label}</p>
+              </article>
+            </MotionReveal>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-	.about {
-		padding: 8rem 2rem 5rem;
-		background: transparent;
+  .about-panel {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .about-panel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(88, 166, 255, 0.42);
+  }
+
+  .section-title {
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
 	}
 
-	.container {
-		max-width: 1100px;
-		margin: 0 auto;
-	}
-
-	.about-header {
-		margin-bottom: 1.2rem;
-	}
-
-	.about-grid {
-		display: grid;
-		grid-template-columns: 1.2fr 0.8fr;
-		gap: 1rem;
-		align-items: start;
-	}
-
-	.info-card {
-		background: rgba(30, 30, 46, 0.72);
-		border: 1px solid rgba(31, 111, 235, 0.35);
-		border-radius: 16px;
-		padding: 1.5rem;
-		box-shadow: 0 12px 28px rgba(13, 17, 23, 0.3);
-	}
-
-	.about-photo-wrap {
-		margin-bottom: 1rem;
-		padding: 0.85rem;
-		border-radius: 50%;
-		background:
-			radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.18), transparent 45%),
-			rgba(13, 17, 23, 0.72);
-		border: 1px solid rgba(88, 166, 255, 0.22);
-		box-shadow:
-			0 20px 48px rgba(0, 0, 0, 0.32),
-			0 0 0 10px rgba(31, 111, 235, 0.08);
-		aspect-ratio: 1;
-		max-width: 440px;
-		margin-left: auto;
-		margin-right: auto;
-		overflow: hidden;
-	}
-
-	.about-photo {
-		display: block;
-		width: 100%;
-		height: 100%;
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: center top;
-		transform: scale(1.04);
-		transition: transform 0.35s ease;
-		box-shadow: none;
-	}
-
-	.about-photo-wrap:hover .about-photo {
-		transform: scale(1.08);
-	}
-
-	.info-card h3 {
-		margin: 0 0 0.8rem;
-		font-size: 1.3rem;
-		color: #ffffff;
-	}
-
-	.eyebrow {
-		display: inline-block;
-		font-size: 0.8rem;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		padding: 0.35rem 0.75rem;
-		margin: 0 0 0.7rem;
-		border-radius: 999px;
-		background: rgba(31, 111, 235, 0.15);
-		color: #58a6ff;
-	}
-
-	.section-title {
-		font-size: clamp(2rem, 5vw, 2.6rem);
-		margin: 0;
-		color: #ffffff;
-		line-height: 1.1;
-	}
-
-	.about-intro {
-		font-size: 1.08rem;
-		line-height: 1.6;
-		color: #c9d1d9;
-		margin: 0 0 0.8rem;
-	}
-
-	.about-description {
-		margin: 0;
+	.section-description {
+		text-align: center;
 		font-size: 1rem;
-		line-height: 1.65;
 		color: #8b949e;
-	}
-
-	.facts-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: grid;
-		gap: 0.8rem;
-	}
-
-	.facts-list li {
-		padding: 0.95rem 1rem;
-		border-radius: 10px;
-		background: rgba(30, 30, 46, 0.92);
-		border: 1px solid rgba(31, 111, 235, 0.3);
-	}
-
-	.facts-list .label {
-		display: block;
-		font-size: 0.76rem;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: #58a6ff;
-	}
-
-	.facts-list strong {
-		display: block;
-		margin-top: 0.25rem;
-		font-size: 1.08rem;
-		font-weight: 700;
-		color: #c9d1d9;
-	}
-
-	.highlights-title {
-		margin: 1.8rem 0 0.9rem;
-		font-size: 1.35rem;
-		color: #ffffff;
-	}
-
-	.about-highlights {
-		margin-top: 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 0.9rem;
-		list-style: none;
-		padding: 0;
-	}
-
-	.about-highlights li {
-		display: flex;
-		gap: 0.7rem;
-		align-items: flex-start;
-		background: rgba(30, 30, 46, 0.8);
-		border: 1px solid rgba(31, 111, 235, 0.25);
-		border-radius: 14px;
-		padding: 0.95rem 1rem;
-		color: #c9d1d9;
-		line-height: 1.5;
-	}
-
-	.about-highlights li .dot {
-		width: 0.6rem;
-		height: 0.6rem;
-		margin-top: 0.45rem;
-		border-radius: 999px;
-		background: #1f6feb;
-		box-shadow: 0 0 0 5px rgba(31, 111, 235, 0.2);
-		flex-shrink: 0;
-	}
-
-	@media (max-width: 900px) {
-		.about-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.info-card {
-			padding: 1.4rem;
-		}
-
-		.about-photo-wrap {
-			max-width: 360px;
-		}
-	}
-
-	@media (max-width: 560px) {
-		.about-photo-wrap {
-			max-width: 300px;
-			padding: 0.7rem;
-		}
+		margin-bottom: 1.8rem;
 	}
 </style>
