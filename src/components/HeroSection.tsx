@@ -8,18 +8,17 @@ export default function HeroSection() {
   const [imgSrc, setImgSrc] = useState('/assets/sithara.jpg');
 
   const handleImageError = () => {
-    // Fallback data URI SVG if file loading fails
     setImgSrc(
-      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='100%' height='100%' fill='%230d1117'/><circle cx='200' cy='150' r='60' fill='%2358a6ff'/><path d='M100,320 C100,240 300,240 300,320' fill='%2358a6ff'/></svg>"
+      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='100%' height='100%' fill='%23111827'/><circle cx='200' cy='150' r='60' fill='%237C3AED'/><path d='M100,320 C100,240 300,240 300,320' fill='%237C3AED'/></svg>"
     );
   };
 
   return (
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 pb-20">
-      {/* Background Radial Lights */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-radial from-[#58a6ff]/20 via-transparent to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-40 h-[500px] w-[500px] rounded-full bg-radial from-[#a371ff]/15 via-transparent to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/3 h-[450px] w-[450px] rounded-full bg-radial from-[#ff1493]/15 via-transparent to-transparent blur-3xl" />
+      {/* Background Aurora Glow Orbs */}
+      <div className="pointer-events-none absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-radial from-[#7C3AED]/20 via-transparent to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute top-1/3 -right-40 h-[500px] w-[500px] rounded-full bg-radial from-[#38BDF8]/15 via-transparent to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 left-1/3 h-[450px] w-[450px] rounded-full bg-radial from-[#7C3AED]/15 via-transparent to-transparent blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -30,9 +29,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#58a6ff]/30 bg-[#58a6ff]/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#58a6ff] backdrop-blur-md shadow-[0_0_20px_rgba(88,166,255,0.15)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#38BDF8] backdrop-blur-md shadow-[0_0_20px_rgba(124,58,237,0.15)]"
             >
-              <BrainCircuit className="h-4 w-4 animate-pulse text-[#58a6ff]" />
+              <BrainCircuit className="h-4 w-4 animate-pulse text-[#7C3AED]" />
               <span>Computer Science Undergraduate · AI Specialization</span>
             </motion.div>
 
@@ -41,7 +40,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="mt-6 text-4xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-5xl lg:text-6xl"
               style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
             >
               Building Intelligent Software with{' '}
@@ -53,7 +52,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-4 text-base font-semibold text-slate-300 sm:text-lg"
+              className="mt-4 text-base font-semibold text-[#CBD5E1] sm:text-lg"
             >
               Specializing in <TypingEffect />
             </motion.div>
@@ -63,7 +62,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-5 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base"
+              className="mt-5 max-w-2xl text-sm leading-relaxed text-[#94A3B8] sm:text-base"
             >
               I am a Computer Science undergraduate specializing in Artificial Intelligence, passionate about building AI-powered applications, intelligent automation systems, and scalable full-stack solutions that solve real-world problems.
             </motion.p>
@@ -77,7 +76,7 @@ export default function HeroSection() {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#58a6ff] via-[#a371ff] to-[#ff1493] px-6 py-3.5 text-sm font-bold text-black transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(88,166,255,0.5)]"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#6D28D9] to-[#2563EB] px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.55)]"
               >
                 <FolderGit2 className="h-4 w-4" />
                 <span>View Projects</span>
@@ -87,17 +86,17 @@ export default function HeroSection() {
               <a
                 href="/assets/cv/Sithara Hansamali.pdf"
                 download="Sithara Hansamali.pdf"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#58a6ff]/40 bg-[#0d1117]/80 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 hover:shadow-[0_0_25px_rgba(88,166,255,0.25)]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#7C3AED]/40 bg-[#111827]/80 px-6 py-3.5 text-sm font-bold text-[#F8FAFC] backdrop-blur-md transition-all hover:border-[#7C3AED] hover:bg-[#7C3AED]/15 hover:shadow-[0_0_20px_rgba(124,58,237,0.25)]"
               >
-                <Download className="h-4 w-4 text-[#58a6ff]" />
+                <Download className="h-4 w-4 text-[#38BDF8]" />
                 <span>Download CV</span>
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-sm font-semibold text-slate-300 backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/10 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-sm font-semibold text-[#CBD5E1] backdrop-blur-md transition-all hover:border-white/20 hover:bg-white/10 hover:text-white"
               >
-                <Mail className="h-4 w-4 text-[#a371ff]" />
+                <Mail className="h-4 w-4 text-[#7C3AED]" />
                 <span>Contact Me</span>
               </a>
             </motion.div>
@@ -109,14 +108,14 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8 flex items-center gap-4"
             >
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Connect:</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#94A3B8]">Connect:</span>
               <div className="flex items-center gap-3">
                 <a
                   href="https://github.com/Sitharahansamali"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#0d1117]/70 text-slate-300 transition-all hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 hover:text-[#58a6ff] hover:shadow-[0_0_15px_rgba(88,166,255,0.3)]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#111827] text-[#CBD5E1] transition-all hover:border-[#7C3AED] hover:bg-[#7C3AED]/15 hover:text-white hover:shadow-[0_0_15px_rgba(124,58,237,0.3)]"
                 >
                   <GithubIcon className="h-5 w-5" />
                 </a>
@@ -126,7 +125,7 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#0d1117]/70 text-slate-300 transition-all hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 hover:text-[#58a6ff] hover:shadow-[0_0_15px_rgba(88,166,255,0.3)]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#111827] text-[#CBD5E1] transition-all hover:border-[#38BDF8] hover:bg-[#38BDF8]/15 hover:text-[#38BDF8] hover:shadow-[0_0_15px_rgba(56,189,248,0.3)]"
                 >
                   <LinkedinIcon className="h-5 w-5" />
                 </a>
@@ -134,7 +133,7 @@ export default function HeroSection() {
                 <a
                   href="mailto:sitharah.me@gmail.com"
                   aria-label="Email"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#0d1117]/70 text-slate-300 transition-all hover:border-[#ff1493] hover:bg-[#ff1493]/10 hover:text-[#ff1493] hover:shadow-[0_0_15px_rgba(255,20,147,0.3)]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#111827] text-[#CBD5E1] transition-all hover:border-[#22D3EE] hover:bg-[#22D3EE]/15 hover:text-[#22D3EE] hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
                 >
                   <Mail className="h-5 w-5" />
                 </a>
@@ -150,11 +149,11 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-full max-w-sm"
             >
-              {/* Outer Pulsing Glow Aura Ring */}
-              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-r from-[#58a6ff] via-[#a371ff] to-[#ff1493] opacity-75 blur-xl animate-pulse-glow" />
+              {/* Radial Glow Aura Ring */}
+              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-r from-[#7C3AED] via-[#38BDF8] to-[#22D3EE] opacity-60 blur-xl animate-pulse-glow" />
 
               {/* Profile Image Container */}
-              <div className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-[#0d1117] p-3 shadow-2xl backdrop-blur-xl animate-float-slow">
+              <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-[#111827] p-3 shadow-2xl backdrop-blur-xl animate-float-slow">
                 <div className="relative aspect-4/5 overflow-hidden rounded-[2rem]">
                   <img
                     src={imgSrc}
@@ -164,21 +163,21 @@ export default function HeroSection() {
                     decoding="async"
                     className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                   />
-                  {/* Subtle Glass Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080b11] via-transparent to-transparent opacity-50 pointer-events-none" />
+                  {/* Glass Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08111F] via-transparent to-transparent opacity-50 pointer-events-none" />
                 </div>
 
                 {/* Floating Micro Badge */}
-                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-[#0d1117]/90 p-3.5 backdrop-blur-md shadow-lg">
+                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/15 bg-[#0F172A]/90 p-3.5 backdrop-blur-md shadow-lg">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#58a6ff]/20 text-[#58a6ff]">
-                      <Sparkles className="h-5 w-5 animate-pulse" />
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#7C3AED]/20 text-[#38BDF8]">
+                      <Sparkles className="h-5 w-5 animate-pulse text-[#38BDF8]" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                      <h4 className="text-xs font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         AI & ML Engineer
                       </h4>
-                      <p className="text-[11px] text-slate-400">Open for Internships & Projects</p>
+                      <p className="text-[11px] text-[#94A3B8]">Open for Internships & Projects</p>
                     </div>
                   </div>
                 </div>

@@ -32,7 +32,7 @@ export default function BackgroundParticles() {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Particle nodes definition
-    const particleCount = Math.min(Math.floor(width / 18), 70);
+    const particleCount = Math.min(Math.floor(width / 20), 65);
     const particles: Array<{
       x: number;
       y: number;
@@ -46,10 +46,10 @@ export default function BackgroundParticles() {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
         radius: Math.random() * 2 + 1,
-        alpha: Math.random() * 0.5 + 0.2
+        alpha: Math.random() * 0.45 + 0.2
       });
     }
 
@@ -66,10 +66,10 @@ export default function BackgroundParticles() {
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // Draw node
+        // Draw Electric Violet node
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(88, 166, 255, ${p.alpha})`;
+        ctx.fillStyle = `rgba(124, 58, 237, ${p.alpha})`;
         ctx.fill();
 
         // Connect nearby nodes
@@ -83,14 +83,14 @@ export default function BackgroundParticles() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            const lineAlpha = (1 - dist / 130) * 0.18;
-            ctx.strokeStyle = `rgba(88, 166, 255, ${lineAlpha})`;
+            const lineAlpha = (1 - dist / 130) * 0.15;
+            ctx.strokeStyle = `rgba(124, 58, 237, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
 
-        // Mouse proximity link
+        // Mouse proximity link (Azure Blue)
         const mdx = p.x - mouse.x;
         const mdy = p.y - mouse.y;
         const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -99,7 +99,7 @@ export default function BackgroundParticles() {
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
           const mouseAlpha = (1 - mdist / mouse.radius) * 0.25;
-          ctx.strokeStyle = `rgba(163, 113, 255, ${mouseAlpha})`;
+          ctx.strokeStyle = `rgba(56, 189, 248, ${mouseAlpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }

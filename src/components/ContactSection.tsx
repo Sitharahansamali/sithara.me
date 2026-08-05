@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, GraduationCap, Send, CheckCircle2, Loader2, Sparkles, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, GraduationCap, Send, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 
 const contactDetails = [
@@ -9,28 +9,28 @@ const contactDetails = [
     label: 'Email',
     value: 'sitharah.me@gmail.com',
     href: 'mailto:sitharah.me@gmail.com',
-    color: '#58a6ff'
+    color: '#38BDF8'
   },
   {
     icon: Phone,
     label: 'Phone',
     value: '+94 77 520 9369',
     href: 'tel:+94775209369',
-    color: '#a371ff'
+    color: '#7C3AED'
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Middeniya, Sri Lanka',
     href: '#',
-    color: '#ff1493'
+    color: '#22D3EE'
   },
   {
     icon: GraduationCap,
     label: 'Major & Graduation',
     value: 'AI & ML (BSc Hons) · 2027',
     href: '#',
-    color: '#34d399'
+    color: '#22C55E'
   }
 ];
 
@@ -42,7 +42,7 @@ export default function ContactSection() {
     subject: '',
     internshipType: 'full-time',
     message: '',
-    _gotcha: '' // Honeypot field for anti-spam
+    _gotcha: ''
   });
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -55,7 +55,6 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Spam honeypot check
     if (formData._gotcha) {
       setStatus('success');
       return;
@@ -104,7 +103,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative px-4 py-24 sm:px-6 lg:px-8">
       {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#ff1493]/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#7C3AED]/10 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
@@ -113,7 +112,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#ff1493]/30 bg-[#ff1493]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#ff1493]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]"
           >
             <Mail className="h-3.5 w-3.5" />
             <span>Get In Touch</span>
@@ -124,10 +123,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold text-[#F8FAFC] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
-            GET IN <span className="text-gradient">TOUCH.</span>
+            Get In <span className="text-gradient">Touch.</span>
           </motion.h2>
 
           <motion.p
@@ -135,7 +134,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-slate-400"
+            className="mt-4 text-base text-[#94A3B8]"
           >
             Open for AI & Software Engineering internship opportunities, collaborative research, and project inquiries.
           </motion.p>
@@ -143,16 +142,18 @@ export default function ContactSection() {
 
         {/* Contact Layout Grid */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Left Column: Contact Cards */}
+          {/* Left Column: Contact Details */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-6 lg:col-span-5"
           >
-            <div className="glass-panel rounded-3xl p-8 space-y-6">
-              <h3 className="text-xl font-bold text-white">Contact Information</h3>
-              <p className="text-sm leading-relaxed text-slate-300">
+            <div className="glass-panel rounded-3xl p-8 space-y-6 bg-[#111827]">
+              <h3 className="text-xl font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                Contact Information
+              </h3>
+              <p className="text-sm leading-relaxed text-[#CBD5E1]">
                 Whether you have an internship opportunity, a project proposal, or simply want to connect, feel free to drop a message or reach out through social media.
               </p>
 
@@ -162,22 +163,22 @@ export default function ContactSection() {
                   return (
                     <div key={item.label} className="flex items-start gap-4">
                       <div
-                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#0d1117]/80"
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#0F172A]"
                         style={{ color: item.color }}
                       >
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-semibold text-slate-400">{item.label}</h4>
+                        <h4 className="text-xs font-semibold text-[#94A3B8]">{item.label}</h4>
                         {item.href !== '#' ? (
                           <a
                             href={item.href}
-                            className="text-sm font-bold text-white hover:text-[#58a6ff] transition-colors"
+                            className="text-sm font-bold text-[#F8FAFC] hover:text-[#38BDF8] transition-colors"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="text-sm font-bold text-white">{item.value}</p>
+                          <p className="text-sm font-bold text-[#F8FAFC]">{item.value}</p>
                         )}
                       </div>
                     </div>
@@ -187,13 +188,13 @@ export default function ContactSection() {
 
               {/* Social Links */}
               <div className="pt-4 border-t border-white/10">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Social Profiles</h4>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#94A3B8]">Social Profiles</h4>
                 <div className="mt-3 flex items-center gap-3">
                   <a
                     href="https://github.com/Sitharahansamali"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0d1117] text-slate-300 transition-all hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 hover:text-[#58a6ff]"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0F172A] text-[#CBD5E1] transition-all hover:border-[#7C3AED] hover:bg-[#7C3AED]/15 hover:text-white"
                   >
                     <GithubIcon className="h-5 w-5" />
                   </a>
@@ -202,7 +203,7 @@ export default function ContactSection() {
                     href="https://www.linkedin.com/in/sithara-hansamali-8663a1296/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0d1117] text-slate-300 transition-all hover:border-[#58a6ff] hover:bg-[#58a6ff]/10 hover:text-[#58a6ff]"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0F172A] text-[#CBD5E1] transition-all hover:border-[#38BDF8] hover:bg-[#38BDF8]/15 hover:text-[#38BDF8]"
                   >
                     <LinkedinIcon className="h-5 w-5" />
                   </a>
@@ -211,42 +212,41 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Premium Formspree Form */}
+          {/* Right Column: Dark Aurora Formspree Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="glass-panel relative rounded-3xl p-8 sm:p-10 border border-[#58a6ff]/30">
-              <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <div className="glass-panel relative rounded-3xl p-8 sm:p-10 border border-[#7C3AED]/30 bg-[#111827]">
+              <h3 className="text-2xl font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Send a Direct Message
               </h3>
-              <p className="mt-1 text-xs text-slate-400">Powered by Formspree backend with anti-spam protection.</p>
+              <p className="mt-1 text-xs text-[#94A3B8]">Powered by Formspree backend with anti-spam protection.</p>
 
               {status === 'success' ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="mt-8 rounded-2xl border border-[#34d399]/40 bg-[#34d399]/10 p-8 text-center"
+                  className="mt-8 rounded-2xl border border-[#22C55E]/40 bg-[#22C55E]/10 p-8 text-center"
                 >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#34d399]/20 text-[#34d399]">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#22C55E]/20 text-[#22C55E]">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
-                  <h4 className="mt-4 text-xl font-bold text-white">Message Sent Successfully!</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-300">
-                    Thank you for reaching out. I have received your email and will respond as soon as possible.
+                  <h4 className="mt-4 text-xl font-bold text-[#F8FAFC]">Message Sent Successfully!</h4>
+                  <p className="mt-2 text-xs leading-relaxed text-[#CBD5E1]">
+                    Thank you for reaching out. I have received your message and will get back to you shortly.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="mt-6 rounded-xl border border-white/20 bg-[#0d1117] px-6 py-2.5 text-xs font-bold text-white hover:bg-white/10"
+                    className="mt-6 rounded-xl border border-white/20 bg-[#0F172A] px-6 py-2.5 text-xs font-bold text-white hover:bg-white/10"
                   >
                     Send Another Message
                   </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-                  {/* Honeypot field (hidden from users) */}
                   <input
                     type="text"
                     name="_gotcha"
@@ -260,8 +260,8 @@ export default function ContactSection() {
                   {/* Name Row */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="space-y-1.5">
-                      <label htmlFor="firstName" className="text-xs font-semibold text-slate-300">
-                        First Name <span className="text-[#ff1493]">*</span>
+                      <label htmlFor="firstName" className="text-xs font-semibold text-[#CBD5E1]">
+                        First Name <span className="text-[#EF4444]">*</span>
                       </label>
                       <input
                         type="text"
@@ -271,13 +271,13 @@ export default function ContactSection() {
                         value={formData.firstName}
                         onChange={handleChange}
                         placeholder="John"
-                        className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label htmlFor="lastName" className="text-xs font-semibold text-slate-300">
-                        Last Name <span className="text-[#ff1493]">*</span>
+                      <label htmlFor="lastName" className="text-xs font-semibold text-[#CBD5E1]">
+                        Last Name <span className="text-[#EF4444]">*</span>
                       </label>
                       <input
                         type="text"
@@ -287,7 +287,7 @@ export default function ContactSection() {
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder="Doe"
-                        className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                       />
                     </div>
                   </div>
@@ -295,8 +295,8 @@ export default function ContactSection() {
                   {/* Email & Internship Type */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="space-y-1.5">
-                      <label htmlFor="email" className="text-xs font-semibold text-slate-300">
-                        Email Address <span className="text-[#ff1493]">*</span>
+                      <label htmlFor="email" className="text-xs font-semibold text-[#CBD5E1]">
+                        Email Address <span className="text-[#EF4444]">*</span>
                       </label>
                       <input
                         type="email"
@@ -306,12 +306,12 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label htmlFor="internshipType" className="text-xs font-semibold text-slate-300">
+                      <label htmlFor="internshipType" className="text-xs font-semibold text-[#CBD5E1]">
                         Opportunity Type
                       </label>
                       <select
@@ -319,7 +319,7 @@ export default function ContactSection() {
                         name="internshipType"
                         value={formData.internshipType}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                       >
                         <option value="full-time">Full-Time Internship</option>
                         <option value="part-time">Part-Time Internship</option>
@@ -331,7 +331,7 @@ export default function ContactSection() {
 
                   {/* Subject */}
                   <div className="space-y-1.5">
-                    <label htmlFor="subject" className="text-xs font-semibold text-slate-300">
+                    <label htmlFor="subject" className="text-xs font-semibold text-[#CBD5E1]">
                       Subject
                     </label>
                     <input
@@ -341,14 +341,14 @@ export default function ContactSection() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="e.g. AI Engineering Internship Opportunity"
-                      className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                      className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label htmlFor="message" className="text-xs font-semibold text-slate-300">
-                      Message <span className="text-[#ff1493]">*</span>
+                    <label htmlFor="message" className="text-xs font-semibold text-[#CBD5E1]">
+                      Message <span className="text-[#EF4444]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -358,13 +358,13 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell me about your team, project ideas, or opportunity details..."
-                      className="w-full rounded-xl border border-white/15 bg-[#0d1117]/80 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-[#58a6ff] focus:outline-none focus:ring-1 focus:ring-[#58a6ff]"
+                      className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
                     />
                   </div>
 
                   {/* Error Notification */}
                   {status === 'error' && (
-                    <div className="rounded-xl border border-red-500/40 bg-red-500/10 p-4 text-xs text-red-400">
+                    <div className="rounded-xl border border-[#EF4444]/40 bg-[#EF4444]/10 p-4 text-xs text-[#EF4444]">
                       {errorMessage}
                     </div>
                   )}
@@ -373,7 +373,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#58a6ff] via-[#a371ff] to-[#ff1493] px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-black transition-all hover:scale-[1.01] hover:shadow-[0_0_25px_rgba(88,166,255,0.4)] disabled:opacity-50"
+                    className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#6D28D9] to-[#2563EB] px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(124,58,237,0.55)] disabled:opacity-50"
                   >
                     {status === 'loading' ? (
                       <>
