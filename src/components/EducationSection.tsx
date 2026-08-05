@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, BookOpen, Calendar, MapPin, Sparkles, School, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Award, BookOpen, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const courseworkChips = [
   'Machine Learning',

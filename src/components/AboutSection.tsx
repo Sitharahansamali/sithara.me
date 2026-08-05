@@ -19,8 +19,8 @@ const interestTags = [
 
 const stats = [
   { label: 'Current GPA', value: 3.61, suffix: '', isFloat: true },
-  { label: 'Projects Built', value: 12, suffix: '+' },
-  { label: 'Technologies', value: 25, suffix: '+' },
+  { label: 'Projects Built', value: 6, suffix: '+' },
+  { label: 'Technologies', value: 13, suffix: '+' },
   { label: 'Years Experience', value: 3, suffix: '+' }
 ];
 
