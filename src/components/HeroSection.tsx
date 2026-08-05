@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import TypingEffect from './motion/TypingEffect';
 import { Download, FolderGit2, Mail, ArrowRight, Sparkles, BrainCircuit } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 
 export default function HeroSection() {
+  const [imgSrc, setImgSrc] = useState('/assets/sithara.jpg');
+
+  const handleImageError = () => {
+    // Fallback data URI SVG if file loading fails
+    setImgSrc(
+      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='100%' height='100%' fill='%230d1117'/><circle cx='200' cy='150' r='60' fill='%2358a6ff'/><path d='M100,320 C100,240 300,240 300,320' fill='%2358a6ff'/></svg>"
+    );
+  };
+
   return (
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 pb-20">
       {/* Background Radial Lights */}
@@ -33,7 +42,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
-              style={{ fontFamily: 'Orbitron, var(--font-display)' }}
+              style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
             >
               Building Intelligent Software with{' '}
               <span className="text-gradient block mt-1">Artificial Intelligence.</span>
@@ -133,7 +142,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Hero Image Frame */}
+          {/* Right Hero Profile Image Frame */}
           <div className="flex justify-center lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -141,30 +150,35 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-full max-w-sm"
             >
-              {/* Outer Pulsing Aura Ring */}
-              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-[#58a6ff] via-[#a371ff] to-[#ff1493] opacity-75 blur-xl animate-pulse-glow" />
+              {/* Outer Pulsing Glow Aura Ring */}
+              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-r from-[#58a6ff] via-[#a371ff] to-[#ff1493] opacity-75 blur-xl animate-pulse-glow" />
 
               {/* Profile Image Container */}
-              <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-[#0d1117] p-3 shadow-2xl backdrop-blur-xl">
-                <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-[#0d1117] p-3 shadow-2xl backdrop-blur-xl animate-float-slow">
+                <div className="relative aspect-4/5 overflow-hidden rounded-[2rem]">
                   <img
-                    src="/assets/sithara.jpg"
+                    src={imgSrc}
+                    onError={handleImageError}
                     alt="Sithara Hansamali - AI Engineer"
-                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                   />
-                  {/* Glass Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080b11] via-transparent to-transparent opacity-60" />
+                  {/* Subtle Glass Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080b11] via-transparent to-transparent opacity-50 pointer-events-none" />
                 </div>
 
                 {/* Floating Micro Badge */}
-                <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/15 bg-[#0d1117]/85 p-3.5 backdrop-blur-md shadow-lg">
+                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-[#0d1117]/90 p-3.5 backdrop-blur-md shadow-lg">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#58a6ff]/20 text-[#58a6ff]">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#58a6ff]/20 text-[#58a6ff]">
                       <Sparkles className="h-5 w-5 animate-pulse" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white">AI & ML Engineer</h4>
-                      <p className="text-[11px] text-slate-400">Ready for Internships & Projects</p>
+                      <h4 className="text-xs font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        AI & ML Engineer
+                      </h4>
+                      <p className="text-[11px] text-slate-400">Open for Internships & Projects</p>
                     </div>
                   </div>
                 </div>

@@ -18,7 +18,7 @@ const interestTags = [
 ];
 
 const stats = [
-  { label: 'Current GPA', value: 3.8, suffix: '+', isFloat: true },
+  { label: 'Current GPA', value: 3.61, suffix: '', isFloat: true },
   { label: 'Projects Built', value: 12, suffix: '+' },
   { label: 'Technologies', value: 25, suffix: '+' },
   { label: 'Years Experience', value: 3, suffix: '+' }
@@ -49,9 +49,9 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="mt-4 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: 'Orbitron, var(--font-display)' }}
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
-            Engineering Intelligence Beyond Code.
+            ABOUT <span className="text-gradient">ME.</span>
           </motion.h2>
 
           <motion.p
@@ -75,16 +75,18 @@ export default function AboutSection() {
             className="glass-panel relative flex flex-col justify-between rounded-3xl p-8 lg:col-span-7"
           >
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white">The Story Behind My Work</h3>
+              <h3 className="text-2xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                The Story Behind My Engineering Journey
+              </h3>
               <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
-                I am a third-year Computer Science undergraduate specializing in Artificial Intelligence at the University of Kelaniya, driven by a deep fascination with transforming complex research concepts into intuitive, high-impact software applications.
+                I am a third-year Computer Science undergraduate specializing in Artificial Intelligence at the Faculty of Computing and Technology, University of Kelaniya, driven by a deep passion for transforming complex research ideas into intuitive, practical software applications.
               </p>
               <p className="text-sm leading-relaxed text-slate-400 sm:text-base">
-                My approach spans the entire engineering lifecycle: from researching algorithms, curating data, and training deep learning models to architecting robust FastAPI backends, building modern frontend interfaces, and containerizing workflows with Docker for production cloud deployment.
+                My work spans the complete engineering lifecycle: from training deep learning models and architecting FastAPI/Next.js backends to managing Supabase databases and containerizing workflows with Docker for production cloud deployment.
               </p>
 
               <div className="pt-4">
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Engineering Principles</h4>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">Engineering Principles</h4>
                 <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-[#0d1117]/60 p-3">
                     <CheckCircle2 className="h-5 w-5 text-[#58a6ff]" />
@@ -92,7 +94,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-[#0d1117]/60 p-3">
                     <CheckCircle2 className="h-5 w-5 text-[#a371ff]" />
-                    <span className="text-xs font-semibold text-slate-200">Model Explainability & Ethics</span>
+                    <span className="text-xs font-semibold text-slate-200">Model Explainability & Grad-CAM</span>
                   </div>
                   <div className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-[#0d1117]/60 p-3">
                     <CheckCircle2 className="h-5 w-5 text-[#ff1493]" />
@@ -117,7 +119,9 @@ export default function AboutSection() {
               transition={{ delay: 0.1 }}
               className="glass-panel rounded-3xl p-6"
             >
-              <h3 className="text-lg font-bold text-white">Core Focus Areas</h3>
+              <h3 className="text-lg font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                Core Focus Areas
+              </h3>
               <p className="mt-1 text-xs text-slate-400">Domains I actively build and research in:</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
@@ -147,7 +151,7 @@ export default function AboutSection() {
                   transition={{ delay: 0.1 + idx * 0.05 }}
                   className="glass-panel rounded-2xl p-5 text-center"
                 >
-                  <p className="text-3xl font-black text-gradient" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                  <p className="text-3xl font-black text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     <CounterAnimation end={stat.value} suffix={stat.suffix} />
                   </p>
                   <p className="mt-1 text-xs font-bold uppercase tracking-wider text-slate-400">{stat.label}</p>

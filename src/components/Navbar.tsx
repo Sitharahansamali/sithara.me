@@ -75,7 +75,7 @@ export default function Navbar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-[#58a6ff] to-[#a371ff] text-xs font-black text-black shadow-[0_0_15px_rgba(88,166,255,0.5)]">
             SH
           </div>
-          <span className="transition-colors group-hover:text-[#58a6ff]" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <span className="transition-colors group-hover:text-[#58a6ff]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             sithara.me
           </span>
         </a>

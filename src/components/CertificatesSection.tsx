@@ -94,9 +94,9 @@ export default function CertificatesSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="mt-4 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: 'Orbitron, var(--font-display)' }}
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
-            Certifications & Training.
+            VERIFIED <span className="text-gradient">CERTIFICATIONS.</span>
           </motion.h2>
 
           <motion.p

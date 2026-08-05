@@ -42,7 +42,7 @@ export default function LoadingScreen() {
             </motion.div>
 
             {/* Inner Brand Monogram */}
-            <div className="absolute top-[26px] font-mono text-xl font-bold tracking-tighter text-white" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <div className="absolute top-[26px] font-mono text-xl font-bold tracking-tighter text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               SH
             </div>
 

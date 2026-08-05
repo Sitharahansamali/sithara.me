@@ -125,9 +125,9 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="mt-4 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: 'Orbitron, var(--font-display)' }}
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
-            Let's Build Something Intelligent.
+            GET IN <span className="text-gradient">TOUCH.</span>
           </motion.h2>
 
           <motion.p

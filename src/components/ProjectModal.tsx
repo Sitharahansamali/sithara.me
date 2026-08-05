@@ -1,24 +1,31 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, CheckCircle2, Cpu, Layers, AlertCircle, UserCheck } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Cpu, Layers, AlertCircle, UserCheck, BookOpen, Award, Clock, BarChart3 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 
 export type ProjectData = {
   id: string;
   title: string;
+  badge?: string;
   status?: string;
+  duration?: string;
   description: string;
   problem: string;
+  solution?: string;
   keyFeatures: string[];
   technologies: string[];
   architecture: string[];
   challenges: string[];
+  achievements?: string[];
+  learnings?: string[];
+  results?: string;
   role: string;
   github: string;
   demo: string;
   highlights?: string[];
   gradient: string;
   mockupBg: string;
+  metrics?: Array<{ label: string; value: string }>;
 };
 
 type ProjectModalProps = {
@@ -60,10 +67,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Modal Header */}
           <div className="space-y-3 pr-12">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
+              {project.badge && (
+                <span className="rounded-full border border-[#ff1493]/40 bg-[#ff1493]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#ff1493]">
+                  {project.badge}
+                </span>
+              )}
               {project.status && (
                 <span className="rounded-full border border-[#58a6ff]/40 bg-[#58a6ff]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#58a6ff]">
                   {project.status}
+                </span>
+              )}
+              {project.duration && (
+                <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">
+                  <Clock className="h-3 w-3 text-[#a371ff]" />
+                  <span>{project.duration}</span>
                 </span>
               )}
               {project.highlights?.map((h) => (
@@ -73,28 +91,53 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               ))}
             </div>
 
-            <h2 className="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {project.title}
             </h2>
-            <p className="text-sm text-slate-300 sm:text-base">{project.description}</p>
+            <p className="text-sm text-slate-300 sm:text-base leading-relaxed">{project.description}</p>
           </div>
 
           <hr className="my-6 border-white/10" />
+
+          {/* Modal Metrics Bar */}
+          {project.metrics && project.metrics.length > 0 && (
+            <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {project.metrics.map((m) => (
+                <div key={m.label} className="rounded-2xl border border-white/10 bg-[#0d1117]/80 p-3 text-center">
+                  <p className="text-xl font-bold text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    {m.value}
+                  </p>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Modal Body */}
           <div className="space-y-8">
             {/* Problem Solved */}
             <div>
-              <h3 className="flex items-center gap-2 text-base font-bold text-[#58a6ff]">
+              <h3 className="flex items-center gap-2 text-base font-bold text-[#58a6ff]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 <AlertCircle className="h-5 w-5" />
-                <span>Problem Solved</span>
+                <span>Problem Statement</span>
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">{project.problem}</p>
             </div>
 
+            {/* Solution */}
+            {project.solution && (
+              <div>
+                <h3 className="flex items-center gap-2 text-base font-bold text-[#34d399]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <Award className="h-5 w-5" />
+                  <span>Proposed Solution</span>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{project.solution}</p>
+              </div>
+            )}
+
             {/* Key Features */}
             <div>
-              <h3 className="flex items-center gap-2 text-base font-bold text-[#a371ff]">
+              <h3 className="flex items-center gap-2 text-base font-bold text-[#a371ff]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 <CheckCircle2 className="h-5 w-5" />
                 <span>Key Features</span>
               </h3>
@@ -109,45 +152,78 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             {/* Architecture Highlights */}
-            <div>
-              <h3 className="flex items-center gap-2 text-base font-bold text-[#38bdf8]">
-                <Layers className="h-5 w-5" />
-                <span>Architecture & Engineering Highlights</span>
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {project.architecture.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#38bdf8]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {project.architecture && project.architecture.length > 0 && (
+              <div>
+                <h3 className="flex items-center gap-2 text-base font-bold text-[#38bdf8]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <Layers className="h-5 w-5" />
+                  <span>Architecture & Engineering Highlights</span>
+                </h3>
+                <ul className="mt-3 space-y-2">
+                  {project.architecture.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#38bdf8]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            {/* Technical Challenges Solved */}
-            <div>
-              <h3 className="flex items-center gap-2 text-base font-bold text-[#ff1493]">
-                <Cpu className="h-5 w-5" />
-                <span>Technical Challenges Solved</span>
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {project.challenges.map((challenge) => (
-                  <li key={challenge} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff1493]" />
-                    <span>{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Key Challenges */}
+            {project.challenges && project.challenges.length > 0 && (
+              <div>
+                <h3 className="flex items-center gap-2 text-base font-bold text-[#ff1493]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <Cpu className="h-5 w-5" />
+                  <span>Key Technical Challenges Solved</span>
+                </h3>
+                <ul className="mt-3 space-y-2">
+                  {project.challenges.map((challenge) => (
+                    <li key={challenge} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff1493]" />
+                      <span>{challenge}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Achievements & Results */}
+            {project.results && (
+              <div>
+                <h3 className="flex items-center gap-2 text-base font-bold text-[#fbbf24]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <BarChart3 className="h-5 w-5" />
+                  <span>Project Results & Impact</span>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{project.results}</p>
+              </div>
+            )}
 
             {/* My Role */}
             <div>
-              <h3 className="flex items-center gap-2 text-base font-bold text-[#34d399]">
+              <h3 className="flex items-center gap-2 text-base font-bold text-[#34d399]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 <UserCheck className="h-5 w-5" />
                 <span>My Role & Contributions</span>
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">{project.role}</p>
             </div>
+
+            {/* Key Learnings */}
+            {project.learnings && project.learnings.length > 0 && (
+              <div>
+                <h3 className="flex items-center gap-2 text-base font-bold text-[#c084fc]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <BookOpen className="h-5 w-5" />
+                  <span>Key Learnings</span>
+                </h3>
+                <ul className="mt-3 space-y-2">
+                  {project.learnings.map((learning) => (
+                    <li key={learning} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-300">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#c084fc]" />
+                      <span>{learning}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Technologies */}
             <div>
