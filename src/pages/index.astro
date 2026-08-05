@@ -1,15 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
+import LoadingScreen from '../components/motion/LoadingScreen';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
+import ProjectsSection from '../components/ProjectsSection';
+import EducationSection from '../components/EducationSection';
+import JourneyTimeline from '../components/JourneyTimeline';
+import CertificatesSection from '../components/CertificatesSection';
+import ContactSection from '../components/ContactSection';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout 
-	title="Sithara Hansamali - Portfolio" 
-	description="Welcome to my portfolio. I'm a developer passionate about creating amazing web experiences."
+<Layout
+	title="Sithara Hansamali | Artificial Intelligence & Machine Learning Engineer"
+	description="Portfolio of Sithara Hansamali - Computer Science undergraduate specializing in Artificial Intelligence, machine learning, AI agents, speech processing, and scalable software solutions."
 >
-	<Navbar />
-	<Hero />
+	<!-- Motion Utilities -->
+	<LoadingScreen client:load />
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+
+	<!-- Header Navigation -->
+	<Navbar client:load />
+
+	<!-- Main Story Sections -->
+	<main class="relative z-10">
+		<HeroSection client:load />
+		<AboutSection client:visible />
+		<SkillsSection client:visible />
+		<ProjectsSection client:visible />
+		<EducationSection client:visible />
+		<JourneyTimeline client:visible />
+		<CertificatesSection client:visible />
+		<ContactSection client:visible />
+	</main>
+
+	<!-- Footer -->
 	<SiteFooter />
 </Layout>

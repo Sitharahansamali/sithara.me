@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import ProjectsSection from '../components/Projects.astro';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import ProjectsSection from '../components/ProjectsSection';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="Projects - Sithara Hansamali" description="Selected projects and practical work from Sithara Hansamali.">
-	<Navbar />
-	<ProjectsSection />
+<Layout
+	title="Featured AI Projects | Sithara Hansamali"
+	description="Production AI platforms, speech processing agents, medical deep learning models, and full-stack software built by Sithara Hansamali."
+>
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+	<Navbar client:load />
+
+	<main class="relative z-10 pt-16">
+		<ProjectsSection client:load />
+	</main>
+
 	<SiteFooter />
 </Layout>

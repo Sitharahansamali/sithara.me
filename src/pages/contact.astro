@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import ContactSection from '../components/Contact.astro';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import ContactSection from '../components/ContactSection';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="Contact - Sithara Hansamali" description="Contact Sithara Hansamali for opportunities, internships, and collaborations.">
-	<Navbar />
-	<ContactSection />
+<Layout
+	title="Contact & Internships | Sithara Hansamali"
+	description="Connect with Sithara Hansamali for AI/ML engineering internships, full-stack projects, and collaborations."
+>
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+	<Navbar client:load />
+
+	<main class="relative z-10 pt-16">
+		<ContactSection client:load />
+	</main>
+
 	<SiteFooter />
 </Layout>
