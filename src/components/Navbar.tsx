@@ -63,20 +63,20 @@ export default function Navbar() {
       <div
         className={`mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3 transition-all duration-300 ${
           scrolled
-            ? 'border border-[#7C3AED]/30 bg-[#0F172A]/85 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl'
-            : 'border border-white/10 bg-[#08111F]/70 backdrop-blur-md'
+            ? 'border border-[#E63946]/30 bg-[#121214]/85 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl'
+            : 'border border-white/10 bg-[#0B0B0D]/70 backdrop-blur-md'
         }`}
       >
         {/* Brand Logo */}
         <a
           href="/"
-          className="group relative flex items-center gap-2.5 font-mono text-base font-extrabold tracking-wider text-[#F8FAFC]"
+          className="group relative flex items-center gap-2.5 font-mono text-base font-extrabold tracking-wider text-[#FAFAFA]"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-[#7C3AED] to-[#38BDF8] text-xs font-black text-white shadow-[0_0_15px_rgba(124,58,237,0.5)]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-[#E63946] to-[#F97316] text-xs font-black text-white shadow-[0_0_15px_rgba(230,57,70,0.5)]">
             SH
           </div>
-          <span className="transition-colors group-hover:text-[#38BDF8]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            sithara<span className="text-[#7C3AED]">.me</span>
+          <span className="transition-colors group-hover:text-[#F97316]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            sithara<span className="text-[#E63946]">.me</span>
           </span>
         </a>
 
@@ -91,13 +91,13 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`relative px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-colors ${
-                  isActive ? 'text-[#F8FAFC]' : 'text-[#CBD5E1] hover:text-white'
+                  isActive ? 'text-[#FAFAFA]' : 'text-[#D4D4D8] hover:text-white'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeUnderline"
-                    className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#38BDF8] shadow-[0_0_10px_rgba(124,58,237,0.8)]"
+                    className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-gradient-to-r from-[#E63946] to-[#F97316] shadow-[0_0_10px_rgba(230,57,70,0.8)]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -112,9 +112,9 @@ export default function Navbar() {
           <a
             href="/assets/cv/Sithara Hansamali.pdf"
             download="Sithara Hansamali.pdf"
-            className="group inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/40 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-bold text-[#F8FAFC] transition-all hover:border-[#7C3AED] hover:bg-[#7C3AED] hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]"
+            className="group inline-flex items-center gap-2 rounded-full border border-[#E63946]/40 bg-[#E63946]/10 px-4 py-1.5 text-xs font-bold text-[#FAFAFA] transition-all hover:border-[#E63946] hover:bg-[#E63946] hover:shadow-[0_0_20px_rgba(230,57,70,0.4)]"
           >
-            <Download className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 text-[#38BDF8]" />
+            <Download className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 text-[#F97316]" />
             <span>CV</span>
           </a>
         </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#CBD5E1] transition-colors hover:border-[#7C3AED] hover:text-white md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#D4D4D8] transition-colors hover:border-[#E63946] hover:text-white md:hidden"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -136,7 +136,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mt-2 overflow-hidden rounded-3xl border border-[#7C3AED]/30 bg-[#0F172A]/95 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl md:hidden"
+            className="mt-2 overflow-hidden rounded-3xl border border-[#E63946]/30 bg-[#121214]/95 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl md:hidden"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
@@ -144,7 +144,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="rounded-xl px-4 py-2.5 text-sm font-semibold text-[#CBD5E1] transition-colors hover:bg-[#7C3AED]/15 hover:text-white"
+                  className="rounded-xl px-4 py-2.5 text-sm font-semibold text-[#D4D4D8] transition-colors hover:bg-[#E63946]/15 hover:text-white"
                 >
                   {link.name}
                 </a>
@@ -153,7 +153,7 @@ export default function Navbar() {
                 <a
                   href="/assets/cv/Sithara Hansamali.pdf"
                   download="Sithara Hansamali.pdf"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#6D28D9] to-[#2563EB] px-4 py-2.5 text-sm font-bold text-white shadow-lg"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E63946] to-[#F97316] px-4 py-2.5 text-sm font-bold text-white shadow-lg"
                 >
                   <Download className="h-4 w-4" />
                   <span>Download CV</span>

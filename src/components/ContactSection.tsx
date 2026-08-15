@@ -9,28 +9,28 @@ const contactDetails = [
     label: 'Email',
     value: 'sitharah.me@gmail.com',
     href: 'mailto:sitharah.me@gmail.com',
-    color: '#38BDF8'
+    color: '#E63946'
   },
   {
     icon: Phone,
     label: 'Phone',
     value: '+94 77 520 9369',
     href: 'tel:+94775209369',
-    color: '#7C3AED'
+    color: '#F97316'
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Middeniya, Sri Lanka',
     href: '#',
-    color: '#22D3EE'
+    color: '#FB923C'
   },
   {
     icon: GraduationCap,
     label: 'Major & Graduation',
     value: 'AI & ML (BSc Hons) · 2027',
     href: '#',
-    color: '#22C55E'
+    color: '#E63946'
   }
 ];
 
@@ -103,7 +103,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="relative px-4 py-24 sm:px-6 lg:px-8">
       {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#7C3AED]/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#E63946]/10 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
@@ -112,9 +112,9 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/30 bg-[#E63946]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C]"
           >
-            <Mail className="h-3.5 w-3.5" />
+            <Mail className="h-3.5 w-3.5 text-[#E63946]" />
             <span>Get In Touch</span>
           </motion.div>
 
@@ -123,7 +123,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl font-extrabold text-[#F8FAFC] sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold text-[#FAFAFA] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
             Get In <span className="text-gradient">Touch.</span>
@@ -134,7 +134,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-[#94A3B8]"
+            className="mt-4 text-base text-[#A1A1AA]"
           >
             Open for AI & Software Engineering internship opportunities, collaborative research, and project inquiries.
           </motion.p>
@@ -149,11 +149,11 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="space-y-6 lg:col-span-5"
           >
-            <div className="glass-panel rounded-3xl p-8 space-y-6 bg-[#111827]">
-              <h3 className="text-xl font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="glass-panel rounded-3xl p-8 space-y-6 bg-[#18181B]">
+              <h3 className="text-xl font-bold text-[#FAFAFA]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Contact Information
               </h3>
-              <p className="text-sm leading-relaxed text-[#CBD5E1]">
+              <p className="text-sm leading-relaxed text-[#D4D4D8]">
                 Whether you have an internship opportunity, a project proposal, or simply want to connect, feel free to drop a message or reach out through social media.
               </p>
 
@@ -163,22 +163,22 @@ export default function ContactSection() {
                   return (
                     <div key={item.label} className="flex items-start gap-4">
                       <div
-                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#0F172A]"
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#121214]"
                         style={{ color: item.color }}
                       >
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-semibold text-[#94A3B8]">{item.label}</h4>
+                        <h4 className="text-xs font-semibold text-[#A1A1AA]">{item.label}</h4>
                         {item.href !== '#' ? (
                           <a
                             href={item.href}
-                            className="text-sm font-bold text-[#F8FAFC] hover:text-[#38BDF8] transition-colors"
+                            className="text-sm font-bold text-[#FAFAFA] hover:text-[#F97316] transition-colors"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="text-sm font-bold text-[#F8FAFC]">{item.value}</p>
+                          <p className="text-sm font-bold text-[#FAFAFA]">{item.value}</p>
                         )}
                       </div>
                     </div>
@@ -188,13 +188,13 @@ export default function ContactSection() {
 
               {/* Social Links */}
               <div className="pt-4 border-t border-white/10">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#94A3B8]">Social Profiles</h4>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#A1A1AA]">Social Profiles</h4>
                 <div className="mt-3 flex items-center gap-3">
                   <a
                     href="https://github.com/Sitharahansamali"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0F172A] text-[#CBD5E1] transition-all hover:border-[#7C3AED] hover:bg-[#7C3AED]/15 hover:text-white"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#121214] text-[#D4D4D8] transition-all hover:border-[#E63946] hover:bg-[#E63946]/15 hover:text-white"
                   >
                     <GithubIcon className="h-5 w-5" />
                   </a>
@@ -203,7 +203,7 @@ export default function ContactSection() {
                     href="https://www.linkedin.com/in/sithara-hansamali-8663a1296/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0F172A] text-[#CBD5E1] transition-all hover:border-[#38BDF8] hover:bg-[#38BDF8]/15 hover:text-[#38BDF8]"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#121214] text-[#D4D4D8] transition-all hover:border-[#F97316] hover:bg-[#F97316]/15 hover:text-[#F97316]"
                   >
                     <LinkedinIcon className="h-5 w-5" />
                   </a>
@@ -219,28 +219,28 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="glass-panel relative rounded-3xl p-8 sm:p-10 border border-[#7C3AED]/30 bg-[#111827]">
-              <h3 className="text-2xl font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="glass-panel relative rounded-3xl p-8 sm:p-10 border border-[#E63946]/30 bg-[#18181B]">
+              <h3 className="text-2xl font-bold text-[#FAFAFA]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Send a Direct Message
               </h3>
-              <p className="mt-1 text-xs text-[#94A3B8]">Powered by Formspree backend with anti-spam protection.</p>
+              <p className="mt-1 text-xs text-[#A1A1AA]">Powered by Formspree backend with anti-spam protection.</p>
 
               {status === 'success' ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="mt-8 rounded-2xl border border-[#22C55E]/40 bg-[#22C55E]/10 p-8 text-center"
+                  className="mt-8 rounded-2xl border border-[#F97316]/40 bg-[#F97316]/10 p-8 text-center"
                 >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#22C55E]/20 text-[#22C55E]">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F97316]/20 text-[#F97316]">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
-                  <h4 className="mt-4 text-xl font-bold text-[#F8FAFC]">Message Sent Successfully!</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-[#CBD5E1]">
+                  <h4 className="mt-4 text-xl font-bold text-[#FAFAFA]">Message Sent Successfully!</h4>
+                  <p className="mt-2 text-xs leading-relaxed text-[#D4D4D8]">
                     Thank you for reaching out. I have received your message and will get back to you shortly.
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="mt-6 rounded-xl border border-white/20 bg-[#0F172A] px-6 py-2.5 text-xs font-bold text-white hover:bg-white/10"
+                    className="mt-6 rounded-xl border border-white/20 bg-[#121214] px-6 py-2.5 text-xs font-bold text-white hover:bg-white/10"
                   >
                     Send Another Message
                   </button>
@@ -260,8 +260,8 @@ export default function ContactSection() {
                   {/* Name Row */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="space-y-1.5">
-                      <label htmlFor="firstName" className="text-xs font-semibold text-[#CBD5E1]">
-                        First Name <span className="text-[#EF4444]">*</span>
+                      <label htmlFor="firstName" className="text-xs font-semibold text-[#D4D4D8]">
+                        First Name <span className="text-[#E63946]">*</span>
                       </label>
                       <input
                         type="text"
@@ -271,13 +271,13 @@ export default function ContactSection() {
                         value={formData.firstName}
                         onChange={handleChange}
                         placeholder="John"
-                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                        className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] placeholder-[#A1A1AA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label htmlFor="lastName" className="text-xs font-semibold text-[#CBD5E1]">
-                        Last Name <span className="text-[#EF4444]">*</span>
+                      <label htmlFor="lastName" className="text-xs font-semibold text-[#D4D4D8]">
+                        Last Name <span className="text-[#E63946]">*</span>
                       </label>
                       <input
                         type="text"
@@ -287,7 +287,7 @@ export default function ContactSection() {
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder="Doe"
-                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                        className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] placeholder-[#A1A1AA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                       />
                     </div>
                   </div>
@@ -295,8 +295,8 @@ export default function ContactSection() {
                   {/* Email & Internship Type */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="space-y-1.5">
-                      <label htmlFor="email" className="text-xs font-semibold text-[#CBD5E1]">
-                        Email Address <span className="text-[#EF4444]">*</span>
+                      <label htmlFor="email" className="text-xs font-semibold text-[#D4D4D8]">
+                        Email Address <span className="text-[#E63946]">*</span>
                       </label>
                       <input
                         type="email"
@@ -306,12 +306,12 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                        className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] placeholder-[#A1A1AA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label htmlFor="internshipType" className="text-xs font-semibold text-[#CBD5E1]">
+                      <label htmlFor="internshipType" className="text-xs font-semibold text-[#D4D4D8]">
                         Opportunity Type
                       </label>
                       <select
@@ -319,7 +319,7 @@ export default function ContactSection() {
                         name="internshipType"
                         value={formData.internshipType}
                         onChange={handleChange}
-                        className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                        className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                       >
                         <option value="full-time">Full-Time Internship</option>
                         <option value="part-time">Part-Time Internship</option>
@@ -331,7 +331,7 @@ export default function ContactSection() {
 
                   {/* Subject */}
                   <div className="space-y-1.5">
-                    <label htmlFor="subject" className="text-xs font-semibold text-[#CBD5E1]">
+                    <label htmlFor="subject" className="text-xs font-semibold text-[#D4D4D8]">
                       Subject
                     </label>
                     <input
@@ -341,14 +341,14 @@ export default function ContactSection() {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="e.g. AI Engineering Internship Opportunity"
-                      className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                      className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] placeholder-[#A1A1AA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label htmlFor="message" className="text-xs font-semibold text-[#CBD5E1]">
-                      Message <span className="text-[#EF4444]">*</span>
+                    <label htmlFor="message" className="text-xs font-semibold text-[#D4D4D8]">
+                      Message <span className="text-[#E63946]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -358,13 +358,13 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell me about your team, project ideas, or opportunity details..."
-                      className="w-full rounded-xl border border-white/15 bg-[#0F172A] px-4 py-3 text-sm text-[#F8FAFC] placeholder-[#94A3B8] focus:border-[#7C3AED] focus:outline-none focus:ring-1 focus:ring-[#7C3AED] transition-all"
+                      className="w-full rounded-xl border border-white/15 bg-[#121214] px-4 py-3 text-sm text-[#FAFAFA] placeholder-[#A1A1AA] focus:border-[#E63946] focus:outline-none focus:ring-1 focus:ring-[#E63946] transition-all"
                     />
                   </div>
 
                   {/* Error Notification */}
                   {status === 'error' && (
-                    <div className="rounded-xl border border-[#EF4444]/40 bg-[#EF4444]/10 p-4 text-xs text-[#EF4444]">
+                    <div className="rounded-xl border border-[#E63946]/40 bg-[#E63946]/10 p-4 text-xs text-[#E63946]">
                       {errorMessage}
                     </div>
                   )}
@@ -373,7 +373,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#6D28D9] to-[#2563EB] px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(124,58,237,0.55)] disabled:opacity-50"
+                    className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E63946] to-[#F97316] px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(230,57,70,0.35)] transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(230,57,70,0.55)] disabled:opacity-50"
                   >
                     {status === 'loading' ? (
                       <>

@@ -21,22 +21,22 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
 
     <MotionReveal client:visible delay={0.15}>
       <h1 class="mt-6 max-w-5xl text-[clamp(2.8rem,8vw,6.3rem)] font-black uppercase leading-[0.9] tracking-[-0.02em] text-white" style="font-family: var(--font-display);">
-        <span class="hero-name-gradient"><span style="background: linear-gradient(90deg, #58a6ff 0%, #a371ff 25%, #ff1493 50%, #a371ff 75%, #58a6ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">{name}</span></span>
+        <span class="hero-name-gradient"><span style="background: linear-gradient(90deg, #E63946 0%, #F97316 50%, #FB923C 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">{name}</span></span>
       </h1>
     </MotionReveal>
 
     <MotionReveal client:visible delay={0.25}>
-      <p class="mt-6 text-base font-semibold text-slate-300 sm:text-xl">{title}</p>
+      <p class="mt-6 text-base font-semibold text-[#D4D4D8] sm:text-xl">{title}</p>
     </MotionReveal>
 
     <MotionReveal client:visible delay={0.35}>
-      <p class="mt-5 max-w-3xl text-sm leading-8 text-slate-400 sm:text-lg">{bio}</p>
+      <p class="mt-5 max-w-3xl text-sm leading-8 text-[#A1A1AA] sm:text-lg">{bio}</p>
     </MotionReveal>
 
     <MotionReveal client:visible delay={0.45}>
       <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
         {focusPoints.map((point) => (
-          <span class="rounded-full border border-(--border) bg-(--surface) px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-slate-300 shadow-[0_8px_24px_rgba(0,0,0,0.28)]">{point}</span>
+          <span class="rounded-full border border-white/10 bg-[#18181B] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#D4D4D8] shadow-[0_8px_24px_rgba(0,0,0,0.28)]">{point}</span>
         ))}
       </div>
     </MotionReveal>
@@ -45,14 +45,14 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
       <div class="mt-10 flex w-full max-w-md flex-col items-center justify-center gap-3 sm:flex-row">
         <a
           href="/projects"
-          class="w-full rounded-xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 px-6 py-3 text-center text-sm font-bold text-[#0d1117] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(88,166,255,0.5)] sm:w-auto"
+          class="w-full rounded-xl bg-gradient-to-r from-[#E63946] via-[#F97316] to-[#FB923C] px-6 py-3 text-center text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(230,57,70,0.5)] sm:w-auto"
         >
           View Portfolio
         </a>
         <a
           href="/assets/cv/Sithara Hansamali.pdf"
           download="Sithara Hansamali.pdf"
-          class="w-full rounded-xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 px-6 py-3 text-center text-sm font-bold text-[#0d1117] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,20,147,0.5)]"
+          class="w-full rounded-xl border border-[#E63946]/40 bg-[#18181B]/80 px-6 py-3 text-center text-sm font-bold text-[#FAFAFA] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#E63946] hover:bg-[#E63946]/15 hover:shadow-[0_0_30px_rgba(230,57,70,0.3)]"
         >
           Download CV
         </a>
@@ -84,7 +84,7 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
   .hero-orb-left {
     width: 340px;
     height: 340px;
-    background: radial-gradient(circle at center, rgba(88, 166, 255, 0.35) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(230, 57, 70, 0.35) 0%, transparent 70%);
     left: -120px;
     top: 120px;
     animation: orbFloatLeft 10s ease-in-out infinite;
@@ -93,7 +93,7 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
   .hero-orb-right {
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle at center, rgba(109, 99, 255, 0.34) 0%, transparent 72%);
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.34) 0%, transparent 72%);
     right: -110px;
     top: 180px;
     animation: orbFloatRight 12s ease-in-out infinite;
@@ -104,7 +104,7 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
     width: 28px;
     height: 44px;
     border-radius: 16px;
-    border: 2px solid rgba(88, 166, 255, 0.35);
+    border: 2px solid rgba(230, 57, 70, 0.35);
     display: inline-block;
   }
 
@@ -115,7 +115,7 @@ const focusPoints = ['Machine Learning', 'Data-Driven Systems', 'Cloud AI'];
     width: 4px;
     height: 8px;
     border-radius: 999px;
-    background: rgba(88, 166, 255, 0.92);
+    background: rgba(249, 115, 22, 0.92);
     transform: translateX(-50%);
     animation: wheelDrop 1.6s ease-in-out infinite;
   }

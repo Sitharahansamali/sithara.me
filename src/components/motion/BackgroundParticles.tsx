@@ -69,7 +69,7 @@ export default function BackgroundParticles() {
         // Draw Electric Violet node
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(124, 58, 237, ${p.alpha})`;
+        ctx.fillStyle = `rgba(230, 57, 70, ${p.alpha})`;
         ctx.fill();
 
         // Connect nearby nodes
@@ -84,13 +84,13 @@ export default function BackgroundParticles() {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             const lineAlpha = (1 - dist / 130) * 0.15;
-            ctx.strokeStyle = `rgba(124, 58, 237, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(230, 57, 70, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
 
-        // Mouse proximity link (Azure Blue)
+        // Mouse proximity link (Vibrant Orange)
         const mdx = p.x - mouse.x;
         const mdy = p.y - mouse.y;
         const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -99,7 +99,7 @@ export default function BackgroundParticles() {
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
           const mouseAlpha = (1 - mdist / mouse.radius) * 0.25;
-          ctx.strokeStyle = `rgba(56, 189, 248, ${mouseAlpha})`;
+          ctx.strokeStyle = `rgba(249, 115, 22, ${mouseAlpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }

@@ -7,7 +7,7 @@ const skillCategories = [
     id: 'programming',
     title: 'Programming',
     icon: Code,
-    color: '#7C3AED',
+    color: '#E63946',
     skills: [
       { name: 'Python', level: 'Expert', desc: 'Primary language for AI/ML pipelines, FastAPI & Data Science' },
       { name: 'Java', level: 'Advanced', desc: 'Object-oriented application building & Spring Boot' },
@@ -19,7 +19,7 @@ const skillCategories = [
     id: 'ai-ml',
     title: 'AI & Machine Learning',
     icon: Brain,
-    color: '#22D3EE',
+    color: '#F97316',
     skills: [
       { name: 'PyTorch', level: 'Advanced', desc: 'Deep neural networks, model fine-tuning & computer vision' },
       { name: 'TensorFlow', level: 'Advanced', desc: 'Keras neural architectures & model deployment' },
@@ -38,7 +38,7 @@ const skillCategories = [
     id: 'cloud',
     title: 'Cloud & Infrastructure',
     icon: Cloud,
-    color: '#38BDF8',
+    color: '#FB923C',
     skills: [
       { name: 'AWS', level: 'Intermediate', desc: 'EC2, S3 storage, IAM security & cloud hosting' },
       { name: 'Microsoft Azure', level: 'Intermediate', desc: 'Azure App Services, Blob Storage & AI services' },
@@ -49,7 +49,7 @@ const skillCategories = [
     id: 'devops',
     title: 'DevOps & Containers',
     icon: Wrench,
-    color: '#6366F1',
+    color: '#E63946',
     skills: [
       { name: 'Docker', level: 'Advanced', desc: 'Containerization, multi-stage builds & compose files' },
       { name: 'Docker Hub', level: 'Advanced', desc: 'Container image publishing & registry management' },
@@ -60,7 +60,7 @@ const skillCategories = [
     id: 'databases',
     title: 'Databases',
     icon: Database,
-    color: '#14B8A6',
+    color: '#F97316',
     skills: [
       { name: 'MongoDB', level: 'Advanced', desc: 'NoSQL document database design & aggregation queries' },
       { name: 'PostgreSQL', level: 'Advanced', desc: 'Relational schema, SQL queries, indexes & foreign keys' },
@@ -71,7 +71,7 @@ const skillCategories = [
     id: 'frontend',
     title: 'Frontend Development',
     icon: Layout,
-    color: '#38BDF8',
+    color: '#FB923C',
     skills: [
       { name: 'React', level: 'Advanced', desc: 'Modern component-based interactive web interfaces' },
       { name: 'Next.js', level: 'Advanced', desc: 'React framework SSR & App Router' },
@@ -86,7 +86,7 @@ const skillCategories = [
     id: 'backend',
     title: 'Backend Development',
     icon: Server,
-    color: '#7C3AED',
+    color: '#E63946',
     skills: [
       { name: 'FastAPI', level: 'Expert', desc: 'Async Python REST APIs, Pydantic validation & OpenAPI' },
       { name: 'PHP', level: 'Intermediate', desc: 'Server-side web scripting & database operations' },
@@ -97,7 +97,7 @@ const skillCategories = [
     id: 'tools',
     title: 'Tools & Environments',
     icon: Sparkles,
-    color: '#22D3EE',
+    color: '#F97316',
     skills: [
       { name: 'Git', level: 'Expert', desc: 'Branch management, pull requests, merges & commit history' },
       { name: 'GitHub', level: 'Expert', desc: 'Repository management, code reviews & projects' },
@@ -124,9 +124,9 @@ export default function SkillsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/30 bg-[#E63946]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C]"
           >
-            <Brain className="h-3.5 w-3.5" />
+            <Brain className="h-3.5 w-3.5 text-[#E63946]" />
             <span>Technical Capabilities</span>
           </motion.div>
 
@@ -135,7 +135,7 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl font-extrabold text-[#F8FAFC] sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold text-[#FAFAFA] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
             Technical <span className="text-gradient">Skills.</span>
@@ -146,7 +146,7 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-[#94A3B8]"
+            className="mt-4 text-base text-[#A1A1AA]"
           >
             Categorized tools, frameworks, and languages I leverage for AI and software engineering.
           </motion.p>
@@ -163,8 +163,8 @@ export default function SkillsSection() {
               onClick={() => setActiveTab('all')}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
                 activeTab === 'all'
-                  ? 'bg-gradient-to-r from-[#6D28D9] to-[#2563EB] text-white shadow-[0_0_15px_rgba(124,58,237,0.4)]'
-                  : 'border border-white/10 bg-[#111827] text-[#CBD5E1] hover:border-white/20 hover:text-white'
+                  ? 'bg-gradient-to-r from-[#E63946] to-[#F97316] text-white shadow-[0_0_15px_rgba(230,57,70,0.4)]'
+                  : 'border border-white/10 bg-[#18181B] text-[#D4D4D8] hover:border-white/20 hover:text-white'
               }`}
             >
               All Categories
@@ -175,8 +175,8 @@ export default function SkillsSection() {
                 onClick={() => setActiveTab(cat.id)}
                 className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
                   activeTab === cat.id
-                    ? 'border border-[#7C3AED] bg-[#7C3AED]/20 text-[#F8FAFC] shadow-[0_0_15px_rgba(124,58,237,0.3)]'
-                    : 'border border-white/10 bg-[#111827] text-[#94A3B8] hover:border-white/20 hover:text-[#CBD5E1]'
+                    ? 'border border-[#E63946] bg-[#E63946]/20 text-[#FAFAFA] shadow-[0_0_15px_rgba(230,57,70,0.3)]'
+                    : 'border border-white/10 bg-[#18181B] text-[#A1A1AA] hover:border-white/20 hover:text-[#D4D4D8]'
                 }`}
               >
                 {cat.title}
@@ -198,7 +198,7 @@ export default function SkillsSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4, delay: categoryIndex * 0.05 }}
-                  className="glass-panel group relative overflow-hidden rounded-3xl p-6 bg-[#111827]"
+                  className="glass-panel group relative overflow-hidden rounded-3xl p-6 bg-[#18181B]"
                 >
                   {/* Category Glow Line */}
                   <div
@@ -209,16 +209,16 @@ export default function SkillsSection() {
                   {/* Header */}
                   <div className="flex items-center gap-3">
                     <div
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#0F172A] transition-transform duration-300 group-hover:rotate-6"
+                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#121214] transition-transform duration-300 group-hover:rotate-6"
                       style={{ color: cat.color }}
                     >
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#F8FAFC]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                      <h3 className="text-lg font-bold text-[#FAFAFA]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         {cat.title}
                       </h3>
-                      <span className="text-xs text-[#94A3B8]">{cat.skills.length} Technologies</span>
+                      <span className="text-xs text-[#A1A1AA]">{cat.skills.length} Technologies</span>
                     </div>
                   </div>
 
@@ -227,11 +227,11 @@ export default function SkillsSection() {
                     {cat.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="group/pill relative flex items-center gap-2 rounded-xl border border-white/10 bg-[#0F172A]/90 px-3.5 py-2 text-xs font-semibold text-[#CBD5E1] transition-all duration-300 hover:border-[#7C3AED]/50 hover:bg-[#7C3AED]/15 hover:text-white hover:-translate-y-1"
+                        className="group/pill relative flex items-center gap-2 rounded-xl border border-white/10 bg-[#121214]/90 px-3.5 py-2 text-xs font-semibold text-[#D4D4D8] transition-all duration-300 hover:border-[#E63946]/50 hover:bg-[#E63946]/15 hover:text-white hover:-translate-y-1"
                       >
                         <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: cat.color }} />
                         <span>{skill.name}</span>
-                        <span className="ml-1 text-[10px] text-[#94A3B8] font-normal">({skill.level})</span>
+                        <span className="ml-1 text-[10px] text-[#A1A1AA] font-normal">({skill.level})</span>
                       </div>
                     ))}
                   </div>
