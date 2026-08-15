@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import SkillsSection from '../components/Skills.astro';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import SkillsSection from '../components/SkillsSection';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="Skills - Sithara Hansamali" description="Technical skills, tools, and technologies Sithara Hansamali uses.">
-	<Navbar />
-	<SkillsSection />
+<Layout
+	title="Skills & Tech Stack | Sithara Hansamali"
+	description="Programming languages, AI/ML frameworks, cloud infrastructure, databases, and development tools mastered by Sithara Hansamali."
+>
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+	<Navbar client:load />
+
+	<main class="relative z-10 pt-16">
+		<SkillsSection client:load />
+	</main>
+
 	<SiteFooter />
 </Layout>

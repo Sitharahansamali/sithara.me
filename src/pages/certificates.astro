@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import CertificatesSection from '../components/Certificates.astro';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import CertificatesSection from '../components/CertificatesSection';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="Certificates - Sithara Hansamali" description="Certificates and learning milestones of Sithara Hansamali.">
-	<Navbar />
-	<CertificatesSection />
+<Layout
+	title="Certifications | Sithara Hansamali"
+	description="Verified technical certifications in Google AI, AWS AI Practitioner, IBM Python, Linux, Azure, and Anthropic Claude."
+>
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+	<Navbar client:load />
+
+	<main class="relative z-10 pt-16">
+		<CertificatesSection client:load />
+	</main>
+
 	<SiteFooter />
 </Layout>

@@ -1,12 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import AboutSection from '../components/About.astro';
+import ScrollProgress from '../components/motion/ScrollProgress';
+import BackToTop from '../components/motion/BackToTop';
+import BackgroundParticles from '../components/motion/BackgroundParticles';
+import Navbar from '../components/Navbar';
+import AboutSection from '../components/AboutSection';
+import EducationSection from '../components/EducationSection';
+import JourneyTimeline from '../components/JourneyTimeline';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<Layout title="About - Sithara Hansamali" description="About Sithara Hansamali and her background in AI, machine learning, and software development.">
-	<Navbar />
-	<AboutSection />
+<Layout
+	title="About & Journey | Sithara Hansamali"
+	description="Background, academic specialization in Artificial Intelligence, and growth journey of Sithara Hansamali."
+>
+	<ScrollProgress client:load />
+	<BackToTop client:load />
+	<BackgroundParticles client:load />
+	<Navbar client:load />
+
+	<main class="relative z-10 pt-16">
+		<AboutSection client:load />
+		<EducationSection client:visible />
+		<JourneyTimeline client:visible />
+	</main>
+
 	<SiteFooter />
 </Layout>
