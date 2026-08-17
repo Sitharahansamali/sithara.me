@@ -6,6 +6,8 @@ import { GithubIcon } from './SocialIcons';
 export type ProjectData = {
   id: string;
   title: string;
+  image?: any;
+  altText?: string;
   badge?: string;
   status?: string;
   duration?: string;
@@ -96,6 +98,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </h2>
             <p className="text-sm text-[#D4D4D8] sm:text-base leading-relaxed">{project.description}</p>
           </div>
+
+          {project.image && (
+            <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-[#121214]">
+              <img
+                src={typeof project.image === 'string' ? project.image : project.image?.src || project.image}
+                alt={project.altText || `${project.title} interface`}
+                className="max-h-72 w-full object-cover object-top"
+              />
+            </div>
+          )}
 
           <hr className="my-6 border-white/10" />
 

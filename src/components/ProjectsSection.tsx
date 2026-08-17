@@ -4,10 +4,18 @@ import ProjectModal, { type ProjectData } from './ProjectModal';
 import { ExternalLink, Sparkles, ArrowRight, Clock, Award, Layers, Cpu, ShieldCheck } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 
+import dataStormImg from '../assets/projects/DataStorm-7.png';
+import halleaseImg from '../assets/projects/Hallease.jpeg';
+import newsGuardImg from '../assets/projects/NewsGuard_AI.png';
+import pneumoniaXrayImg from '../assets/projects/pneumonia_xray.png';
+import techPulseImg from '../assets/projects/TechPulse_AI.png';
+import zapverseImg from '../assets/projects/Zapverse.png';
+
 const projects: ProjectData[] = [
   {
     id: 'voice-to-action',
     title: 'Voice to Action AI Agent Platform',
+    altText: 'Voice to Action AI Agent Platform interface',
     status: 'Ongoing',
     duration: '2025 - Present',
     highlights: ['Speech AI', 'LangGraph Agents', 'RAG Memory'],
@@ -62,6 +70,8 @@ const projects: ProjectData[] = [
   {
     id: 'techpulse-ai',
     title: 'TechPulse AI',
+    image: techPulseImg,
+    altText: 'TechPulse AI technology news platform',
     status: 'Completed',
     duration: '2025',
     highlights: ['GenAI News Engine', 'n8n Automation', 'FastAPI'],
@@ -105,6 +115,8 @@ const projects: ProjectData[] = [
   {
     id: 'pneumonia-xray',
     title: 'Pneumonia Chest X-Ray Classifier',
+    image: pneumoniaXrayImg,
+    altText: 'Pneumonia Chest X-Ray Classifier interface',
     status: 'Completed',
     duration: '2025',
     highlights: ['Medical AI', 'Grad-CAM Explainability', 'Cloud Deployed'],
@@ -148,6 +160,8 @@ const projects: ProjectData[] = [
   {
     id: 'hallease',
     title: 'HallEase - Event & Hall Management System',
+    image: halleaseImg,
+    altText: 'HallEase event and hall management system',
     status: 'Completed',
     duration: '2024 - 2025',
     highlights: ['Faculty Platform', 'Supabase & Next.js', 'Automated Mailjet'],
@@ -191,6 +205,8 @@ const projects: ProjectData[] = [
   {
     id: 'newsguard-ai',
     title: 'NewsGuard AI',
+    image: newsGuardImg,
+    altText: 'NewsGuard AI fake news detection interface',
     status: 'Completed',
     duration: '2024',
     highlights: ['Fake News Classifier', 'ML Predictions', 'MongoDB History'],
@@ -231,6 +247,8 @@ const projects: ProjectData[] = [
   {
     id: 'zapverse',
     title: 'ZapVerse Platform',
+    image: zapverseImg,
+    altText: 'ZapVerse university social media platform',
     status: 'Completed',
     duration: '2024',
     highlights: ['Full-Stack Web', 'Spring Boot', 'Azure & GitHub Actions'],
@@ -272,6 +290,8 @@ const projects: ProjectData[] = [
   {
     id: 'octave-datastorm',
     title: 'OCTAVE DataStorm Hackathon',
+    image: dataStormImg,
+    altText: 'OCTAVE DataStorm hackathon project',
     badge: 'Hackathon Project',
     status: 'Completed',
     duration: 'Hackathon Edition',
@@ -485,35 +505,48 @@ export default function ProjectsSection() {
                   {/* Graphic Preview Mockup Column */}
                   <div className={`lg:col-span-6 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div className="relative group/mockup overflow-hidden rounded-3xl border border-white/15 p-2 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-                      <div className={`relative aspect-16/10 w-full overflow-hidden rounded-2xl ${project.mockupBg} p-6 flex flex-col justify-between border border-white/10`}>
+                      <div className={`relative aspect-16/10 w-full overflow-hidden rounded-2xl ${project.mockupBg} flex flex-col justify-between border border-white/10`}>
                         {/* Mockup Top Window Controls */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between px-4 py-3 bg-[#121214]/90 border-b border-white/10 z-10 backdrop-blur-md">
                           <div className="flex items-center gap-2">
                             <span className="h-3 w-3 rounded-full bg-red-500/80" />
                             <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
                             <span className="h-3 w-3 rounded-full bg-green-500/80" />
                           </div>
-                          <span className="font-mono text-[11px] font-medium text-[#A1A1AA]">{project.id}.ai</span>
+                          <span className="font-mono text-[11px] font-medium text-[#A1A1AA]">{project.id}.app</span>
                         </div>
 
-                        {/* Center Visual Graphics */}
-                        <div className="my-auto text-center">
-                          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white backdrop-blur-md shadow-lg">
-                            <Sparkles className="h-8 w-8 animate-pulse text-[#F97316]" />
+                        {project.image ? (
+                          <div className="relative h-full w-full overflow-hidden bg-[#0d1117] flex items-center justify-center">
+                            <img
+                              src={typeof project.image === 'string' ? project.image : project.image?.src || project.image}
+                              alt={project.altText || `${project.title} interface`}
+                              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-105"
+                              loading="lazy"
+                            />
                           </div>
-                          <h4 className="mt-4 text-lg font-bold text-[#FAFAFA] tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            {project.title}
-                          </h4>
-                          <p className="mt-1 text-xs text-[#D4D4D8] font-mono">
-                            {project.badge ? project.badge : 'AI Systems Active'}
-                          </p>
-                        </div>
+                        ) : (
+                          <>
+                            {/* Center Visual Graphics */}
+                            <div className="my-auto text-center p-4">
+                              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white backdrop-blur-md shadow-lg">
+                                <Sparkles className="h-8 w-8 animate-pulse text-[#F97316]" />
+                              </div>
+                              <h4 className="mt-4 text-lg font-bold text-[#FAFAFA] tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                {project.title}
+                              </h4>
+                              <p className="mt-1 text-xs text-[#D4D4D8] font-mono">
+                                {project.badge ? project.badge : 'AI Systems Active'}
+                              </p>
+                            </div>
 
-                        {/* Bottom Metric Tags */}
-                        <div className="flex items-center justify-between rounded-xl bg-black/60 p-2.5 backdrop-blur-md text-[11px] font-mono text-[#D4D4D8] border border-white/10">
-                          <span>Role: AI/ML</span>
-                          <span className="text-[#F97316]">Status: Verified Node</span>
-                        </div>
+                            {/* Bottom Metric Tags */}
+                            <div className="m-3 flex items-center justify-between rounded-xl bg-black/60 p-2.5 backdrop-blur-md text-[11px] font-mono text-[#D4D4D8] border border-white/10">
+                              <span>Role: AI/ML</span>
+                              <span className="text-[#F97316]">Status: Verified Node</span>
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>
