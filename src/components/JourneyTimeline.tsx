@@ -8,7 +8,7 @@ const milestones = [
     title: 'Started Computer Science',
     description: 'Enrolled in Computer Science at University of Kelaniya, building foundations in software engineering, data structures, and object-oriented programming.',
     icon: Code,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -16,7 +16,7 @@ const milestones = [
     title: 'Learned Python & Data Science',
     description: 'Mastered Python syntax, data structures, NumPy array mathematics, Pandas tabular manipulation, and Matplotlib analytical visualizations.',
     icon: Code,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -24,7 +24,7 @@ const milestones = [
     title: 'Built Full-Stack Web Applications',
     description: 'Developed full-stack web platforms using Java Spring Boot, React, Next.js, FastAPI, PostgreSQL, Supabase, and REST APIs.',
     icon: Rocket,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -32,7 +32,7 @@ const milestones = [
     title: 'Started Machine Learning & Hackathons',
     description: 'Explored supervised and unsupervised ML algorithms, NLP text classifiers, and participated in the OCTAVE DataStorm Hackathon.',
     icon: Award,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -40,7 +40,7 @@ const milestones = [
     title: 'Built Medical & AI Solutions',
     description: 'Constructed PyTorch deep learning models (EfficientNet-B0 with Grad-CAM explainability) and news credibility prediction platforms.',
     icon: Brain,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -48,7 +48,7 @@ const milestones = [
     title: 'Cloud Deployment & DevOps Pipeline',
     description: 'Containerized AI applications with Docker, configured GitHub Actions CI/CD workflows, and deployed microservices to Azure & Render.',
     icon: Cloud,
-    color: '#7C3AED',
+    color: '#E63946',
     status: 'Completed'
   },
   {
@@ -56,7 +56,7 @@ const milestones = [
     title: 'Current AI Specialization',
     description: 'Specializing in Generative AI, LangGraph multi-agent frameworks, vector database RAG memory, and Whisper speech processing.',
     icon: Brain,
-    color: '#7C3AED',
+    color: '#F97316',
     status: 'Current Focus',
     isCurrent: true
   },
@@ -65,7 +65,7 @@ const milestones = [
     title: 'Future Goal: AI Engineer',
     description: 'Aspiring to join an innovative technology team as an Artificial Intelligence & Machine Learning Engineer to build production software.',
     icon: Flag,
-    color: '#22D3EE',
+    color: '#FB923C',
     status: 'Next Milestone',
     isFuture: true
   }
@@ -81,9 +81,9 @@ export default function JourneyTimeline() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/30 bg-[#E63946]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C]"
           >
-            <Compass className="h-3.5 w-3.5" />
+            <Compass className="h-3.5 w-3.5 text-[#E63946]" />
             <span>Growth & Evolution</span>
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function JourneyTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl font-extrabold text-[#F8FAFC] sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold text-[#FAFAFA] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
             My <span className="text-gradient">Journey.</span>
@@ -103,7 +103,7 @@ export default function JourneyTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-[#94A3B8]"
+            className="mt-4 text-base text-[#A1A1AA]"
           >
             The step-by-step milestone progression of my technical capabilities and specialization.
           </motion.p>
@@ -112,7 +112,7 @@ export default function JourneyTimeline() {
         {/* Timeline List */}
         <div className="relative mx-auto max-w-4xl">
           {/* Animated Connecting Line */}
-          <div className="absolute top-0 bottom-0 left-6 w-1 bg-gradient-to-b from-[#7C3AED] via-[#38BDF8] to-[#22D3EE] sm:left-1/2 sm:-translate-x-1/2 rounded-full" />
+          <div className="absolute top-0 bottom-0 left-6 w-1 bg-gradient-to-b from-[#E63946] via-[#F97316] to-[#FB923C] sm:left-1/2 sm:-translate-x-1/2 rounded-full" />
 
           <div className="space-y-12">
             {milestones.map((item, idx) => {
@@ -130,12 +130,12 @@ export default function JourneyTimeline() {
                 >
                   {/* Timeline Node */}
                   <div
-                    className={`absolute left-6 -translate-x-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#08111F] text-white shadow-lg sm:left-1/2 ${
+                    className={`absolute left-6 -translate-x-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#0B0B0D] text-white shadow-lg sm:left-1/2 ${
                       item.isCurrent
-                        ? 'bg-[#7C3AED] shadow-[0_0_20px_rgba(124,58,237,0.8)] animate-pulse'
+                        ? 'bg-[#F97316] shadow-[0_0_20px_rgba(249,115,22,0.8)] animate-pulse'
                         : item.isFuture
-                        ? 'bg-[#22D3EE] text-black shadow-[0_0_15px_rgba(34,211,238,0.6)]'
-                        : 'bg-[#7C3AED] shadow-[0_0_15px_rgba(124,58,237,0.5)]'
+                        ? 'bg-[#FB923C] text-black shadow-[0_0_15px_rgba(251,146,60,0.6)]'
+                        : 'bg-[#E63946] shadow-[0_0_15px_rgba(230,57,70,0.5)]'
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -143,26 +143,26 @@ export default function JourneyTimeline() {
 
                   {/* Card Content */}
                   <div className={`ml-14 w-full sm:ml-0 sm:w-1/2 ${isEven ? 'sm:pr-10 sm:text-right' : 'sm:pl-10 sm:ml-auto'}`}>
-                    <div className="glass-panel group relative overflow-hidden rounded-3xl p-6 bg-[#111827] transition-all hover:border-[#7C3AED]/50 hover:-translate-y-1">
+                    <div className="glass-panel group relative overflow-hidden rounded-3xl p-6 bg-[#18181B] transition-all hover:border-[#E63946]/50 hover:-translate-y-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2 sm:justify-end">
-                        <span className="font-mono text-xs font-bold text-[#94A3B8]">MILESTONE {item.step}</span>
+                        <span className="font-mono text-xs font-bold text-[#A1A1AA]">MILESTONE {item.step}</span>
                         <span
                           className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                             item.isFuture
-                              ? 'bg-[#22D3EE] text-black'
+                              ? 'bg-[#FB923C] text-black'
                               : item.isCurrent
-                              ? 'bg-[#7C3AED] text-white shadow-[0_0_10px_rgba(124,58,237,0.5)]'
-                              : 'bg-[#7C3AED]/20 text-[#38BDF8] border border-[#7C3AED]/30'
+                              ? 'bg-[#F97316] text-white shadow-[0_0_10px_rgba(249,115,22,0.5)]'
+                              : 'bg-[#E63946]/20 text-[#FB923C] border border-[#E63946]/30'
                           }`}
                         >
                           {item.status}
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-bold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                      <h3 className="text-lg font-bold text-[#FAFAFA] group-hover:text-[#F97316] transition-colors" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-xs leading-relaxed text-[#CBD5E1]">{item.description}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-[#D4D4D8]">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>

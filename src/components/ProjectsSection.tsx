@@ -4,10 +4,18 @@ import ProjectModal, { type ProjectData } from './ProjectModal';
 import { ExternalLink, Sparkles, ArrowRight, Clock, Award, Layers, Cpu, ShieldCheck } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 
+import dataStormImg from '../assets/projects/DataStorm-7.png';
+import halleaseImg from '../assets/projects/Hallease.jpeg';
+import newsGuardImg from '../assets/projects/NewsGuard_AI.png';
+import pneumoniaXrayImg from '../assets/projects/pneumonia_xray.png';
+import techPulseImg from '../assets/projects/TechPulse_AI.png';
+import zapverseImg from '../assets/projects/Zapverse.png';
+
 const projects: ProjectData[] = [
   {
     id: 'voice-to-action',
     title: 'Voice to Action AI Agent Platform',
+    altText: 'Voice to Action AI Agent Platform interface',
     status: 'Ongoing',
     duration: '2025 - Present',
     highlights: ['Speech AI', 'LangGraph Agents', 'RAG Memory'],
@@ -51,8 +59,8 @@ const projects: ProjectData[] = [
     results: 'Built an end-to-end voice platform capable of contextual multi-turn conversation and automated task execution with sub-second response times.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#7C3AED] via-[#38BDF8] to-[#22D3EE]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#E63946] via-[#F97316] to-[#FB923C]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Audio Latency', value: '<120ms' },
       { label: 'RAG Accuracy', value: '98.4%' },
@@ -62,6 +70,8 @@ const projects: ProjectData[] = [
   {
     id: 'techpulse-ai',
     title: 'TechPulse AI',
+    image: techPulseImg,
+    altText: 'TechPulse AI technology news platform',
     status: 'Completed',
     duration: '2025',
     highlights: ['GenAI News Engine', 'n8n Automation', 'FastAPI'],
@@ -94,8 +104,8 @@ const projects: ProjectData[] = [
     results: 'Automated 100% of daily news curation, processing over 500 articles daily with instant AI summaries.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#38BDF8] via-[#22D3EE] to-[#7C3AED]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#F97316] via-[#FB923C] to-[#E63946]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Articles / Day', value: '500+' },
       { label: 'AI Summaries', value: 'Instant' },
@@ -105,6 +115,8 @@ const projects: ProjectData[] = [
   {
     id: 'pneumonia-xray',
     title: 'Pneumonia Chest X-Ray Classifier',
+    image: pneumoniaXrayImg,
+    altText: 'Pneumonia Chest X-Ray Classifier interface',
     status: 'Completed',
     duration: '2025',
     highlights: ['Medical AI', 'Grad-CAM Explainability', 'Cloud Deployed'],
@@ -137,8 +149,8 @@ const projects: ProjectData[] = [
     results: 'Achieved 96.2% diagnostic accuracy on validation datasets while providing actionable visual heatmaps for clinicians.',
     github: 'https://github.com/Sitharahansamali',
     demo: 'https://render.com',
-    gradient: 'from-[#7C3AED] via-[#38BDF8] to-[#22C55E]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#E63946] via-[#F97316] to-[#FB923C]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Model Accuracy', value: '96.2%' },
       { label: 'Explainability', value: 'Grad-CAM' },
@@ -148,6 +160,8 @@ const projects: ProjectData[] = [
   {
     id: 'hallease',
     title: 'HallEase - Event & Hall Management System',
+    image: halleaseImg,
+    altText: 'HallEase event and hall management system',
     status: 'Completed',
     duration: '2024 - 2025',
     highlights: ['Faculty Platform', 'Supabase & Next.js', 'Automated Mailjet'],
@@ -180,8 +194,8 @@ const projects: ProjectData[] = [
     results: 'Streamlined faculty hall bookings, reducing approval processing time by 80% and eliminating double-booking conflicts completely.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#38BDF8] via-[#7C3AED] to-[#22D3EE]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#F97316] via-[#E63946] to-[#FB923C]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Booking Clashes', value: '0%' },
       { label: 'Approval Speed', value: '80% Faster' },
@@ -191,6 +205,8 @@ const projects: ProjectData[] = [
   {
     id: 'newsguard-ai',
     title: 'NewsGuard AI',
+    image: newsGuardImg,
+    altText: 'NewsGuard AI fake news detection interface',
     status: 'Completed',
     duration: '2024',
     highlights: ['Fake News Classifier', 'ML Predictions', 'MongoDB History'],
@@ -221,8 +237,8 @@ const projects: ProjectData[] = [
     results: 'Achieved 94.8% classification accuracy on news verification benchmarks with historical audit logs.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#7C3AED] via-[#22D3EE] to-[#38BDF8]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#E63946] via-[#FB923C] to-[#F97316]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Model Precision', value: '94.8%' },
       { label: 'Inference', value: '<100ms' }
@@ -231,6 +247,8 @@ const projects: ProjectData[] = [
   {
     id: 'zapverse',
     title: 'ZapVerse Platform',
+    image: zapverseImg,
+    altText: 'ZapVerse university social media platform',
     status: 'Completed',
     duration: '2024',
     highlights: ['Full-Stack Web', 'Spring Boot', 'Azure & GitHub Actions'],
@@ -262,8 +280,8 @@ const projects: ProjectData[] = [
     results: 'Successfully deployed a full-stack campus web app with automated Azure deployments.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#38BDF8] via-[#7C3AED] to-[#22D3EE]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#F97316] via-[#E63946] to-[#FB923C]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Deploy Pipeline', value: 'GitHub Actions' },
       { label: 'Cloud Hosting', value: 'Azure' }
@@ -272,6 +290,8 @@ const projects: ProjectData[] = [
   {
     id: 'octave-datastorm',
     title: 'OCTAVE DataStorm Hackathon',
+    image: dataStormImg,
+    altText: 'OCTAVE DataStorm hackathon project',
     badge: 'Hackathon Project',
     status: 'Completed',
     duration: 'Hackathon Edition',
@@ -308,8 +328,8 @@ const projects: ProjectData[] = [
     results: 'Delivered a functional AI prototype and pitch presentation praised by hackathon judges for analytical rigor and rapid execution.',
     github: 'https://github.com/Sitharahansamali',
     demo: '#',
-    gradient: 'from-[#7C3AED] via-[#38BDF8] to-[#22D3EE]',
-    mockupBg: 'bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1B2434]',
+    gradient: 'from-[#E63946] via-[#F97316] to-[#FB923C]',
+    mockupBg: 'bg-gradient-to-br from-[#121214] via-[#18181B] to-[#1F1F23]',
     metrics: [
       { label: 'Format', value: 'Hackathon' },
       { label: 'Focus', value: 'Data & AI' },
@@ -324,8 +344,8 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="relative px-4 py-24 sm:px-6 lg:px-8">
       {/* Glow Ambient Lights */}
-      <div className="pointer-events-none absolute top-1/3 right-0 h-96 w-96 rounded-full bg-[#7C3AED]/10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 rounded-full bg-[#38BDF8]/10 blur-3xl" />
+      <div className="pointer-events-none absolute top-1/3 right-0 h-96 w-96 rounded-full bg-[#E63946]/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 rounded-full bg-[#F97316]/10 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
@@ -334,9 +354,9 @@ export default function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#38BDF8]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/30 bg-[#E63946]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#FB923C]"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-3.5 w-3.5 text-[#E63946]" />
             <span>Featured Innovations</span>
           </motion.div>
 
@@ -345,7 +365,7 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-3xl font-extrabold text-[#F8FAFC] sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold text-[#FAFAFA] sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
           >
             Featured <span className="text-gradient">Projects.</span>
@@ -356,7 +376,7 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-4 text-base text-[#94A3B8]"
+            className="mt-4 text-base text-[#A1A1AA]"
           >
             Production AI platforms, speech processing agents, medical deep learning models, hackathon innovations, and web platforms.
           </motion.p>
@@ -374,7 +394,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.7 }}
-                className="glass-panel group relative overflow-hidden rounded-3xl p-6 sm:p-8 lg:p-10 bg-[#111827]"
+                className="glass-panel group relative overflow-hidden rounded-3xl p-6 sm:p-8 lg:p-10 bg-[#18181B]"
               >
                 {/* Accent Top Gradient */}
                 <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${project.gradient}`} />
@@ -385,23 +405,23 @@ export default function ProjectsSection() {
                     {/* Status & Badges */}
                     <div className="flex flex-wrap items-center gap-2.5">
                       {project.badge && (
-                        <span className="rounded-full border border-[#7C3AED]/40 bg-[#7C3AED]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#F8FAFC]">
+                        <span className="rounded-full border border-[#E63946]/40 bg-[#E63946]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#FAFAFA]">
                           {project.badge}
                         </span>
                       )}
                       {project.status && (
-                        <span className="rounded-full border border-[#38BDF8]/40 bg-[#38BDF8]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#38BDF8]">
+                        <span className="rounded-full border border-[#F97316]/40 bg-[#F97316]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#F97316]">
                           {project.status}
                         </span>
                       )}
                       {project.duration && (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#94A3B8]">
-                          <Clock className="h-3.5 w-3.5 text-[#7C3AED]" />
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#A1A1AA]">
+                          <Clock className="h-3.5 w-3.5 text-[#E63946]" />
                           <span>{project.duration}</span>
                         </span>
                       )}
                       {project.highlights?.map((h) => (
-                        <span key={h} className="rounded-full border border-white/10 bg-[#0F172A] px-3 py-1 text-xs font-semibold text-[#CBD5E1]">
+                        <span key={h} className="rounded-full border border-white/10 bg-[#121214] px-3 py-1 text-xs font-semibold text-[#D4D4D8]">
                           {h}
                         </span>
                       ))}
@@ -409,26 +429,26 @@ export default function ProjectsSection() {
 
                     {/* Title */}
                     <h3
-                      className="text-2xl font-extrabold text-[#F8FAFC] sm:text-3xl lg:text-4xl"
+                      className="text-2xl font-extrabold text-[#FAFAFA] sm:text-3xl lg:text-4xl"
                       style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
                     >
                       {project.title}
                     </h3>
 
                     {/* Overview */}
-                    <p className="text-sm leading-relaxed text-[#CBD5E1] sm:text-base">
+                    <p className="text-sm leading-relaxed text-[#D4D4D8] sm:text-base">
                       {project.description}
                     </p>
 
                     {/* Animated Metrics Bar */}
                     {project.metrics && project.metrics.length > 0 && (
-                      <div className="grid grid-cols-3 gap-2.5 rounded-2xl border border-white/10 bg-[#0F172A]/80 p-3 text-center">
+                      <div className="grid grid-cols-3 gap-2.5 rounded-2xl border border-white/10 bg-[#121214]/80 p-3 text-center">
                         {project.metrics.map((m) => (
                           <div key={m.label}>
                             <p className="text-sm font-bold text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                               {m.value}
                             </p>
-                            <p className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider">{m.label}</p>
+                            <p className="text-[10px] font-semibold text-[#A1A1AA] uppercase tracking-wider">{m.label}</p>
                           </div>
                         ))}
                       </div>
@@ -439,7 +459,7 @@ export default function ProjectsSection() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-lg border border-white/10 bg-[#0F172A] px-3 py-1 text-xs font-semibold text-[#CBD5E1]"
+                          className="rounded-lg border border-white/10 bg-[#121214] px-3 py-1 text-xs font-semibold text-[#D4D4D8]"
                         >
                           {tech}
                         </span>
@@ -450,7 +470,7 @@ export default function ProjectsSection() {
                     <div className="flex flex-wrap items-center gap-3 pt-4">
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="group/btn inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#6D28D9] to-[#2563EB] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(124,58,237,0.5)]"
+                        className="group/btn inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#E63946] to-[#F97316] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(230,57,70,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,57,70,0.5)]"
                       >
                         <span>Learn More & Architecture</span>
                         <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
@@ -461,7 +481,7 @@ export default function ProjectsSection() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#0F172A] px-4 py-2.5 text-xs font-bold text-[#CBD5E1] transition-colors hover:border-[#7C3AED] hover:text-white"
+                          className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#121214] px-4 py-2.5 text-xs font-bold text-[#D4D4D8] transition-colors hover:border-[#E63946] hover:text-white"
                         >
                           <GithubIcon className="h-4 w-4" />
                           <span>Code</span>
@@ -473,7 +493,7 @@ export default function ProjectsSection() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#0F172A] px-4 py-2.5 text-xs font-bold text-[#CBD5E1] transition-colors hover:border-[#38BDF8] hover:text-[#38BDF8]"
+                          className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#121214] px-4 py-2.5 text-xs font-bold text-[#D4D4D8] transition-colors hover:border-[#F97316] hover:text-[#F97316]"
                         >
                           <ExternalLink className="h-4 w-4" />
                           <span>Live Demo</span>
@@ -485,35 +505,48 @@ export default function ProjectsSection() {
                   {/* Graphic Preview Mockup Column */}
                   <div className={`lg:col-span-6 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div className="relative group/mockup overflow-hidden rounded-3xl border border-white/15 p-2 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
-                      <div className={`relative aspect-16/10 w-full overflow-hidden rounded-2xl ${project.mockupBg} p-6 flex flex-col justify-between border border-white/10`}>
+                      <div className={`relative aspect-16/10 w-full overflow-hidden rounded-2xl ${project.mockupBg} flex flex-col justify-between border border-white/10`}>
                         {/* Mockup Top Window Controls */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between px-4 py-3 bg-[#121214]/90 border-b border-white/10 z-10 backdrop-blur-md">
                           <div className="flex items-center gap-2">
                             <span className="h-3 w-3 rounded-full bg-red-500/80" />
                             <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
                             <span className="h-3 w-3 rounded-full bg-green-500/80" />
                           </div>
-                          <span className="font-mono text-[11px] font-medium text-[#94A3B8]">{project.id}.ai</span>
+                          <span className="font-mono text-[11px] font-medium text-[#A1A1AA]">{project.id}.app</span>
                         </div>
 
-                        {/* Center Visual Graphics */}
-                        <div className="my-auto text-center">
-                          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white backdrop-blur-md shadow-lg">
-                            <Sparkles className="h-8 w-8 animate-pulse text-[#38BDF8]" />
+                        {project.image ? (
+                          <div className="relative h-full w-full overflow-hidden bg-[#0d1117] flex items-center justify-center">
+                            <img
+                              src={typeof project.image === 'string' ? project.image : project.image?.src || project.image}
+                              alt={project.altText || `${project.title} interface`}
+                              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-105"
+                              loading="lazy"
+                            />
                           </div>
-                          <h4 className="mt-4 text-lg font-bold text-[#F8FAFC] tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            {project.title}
-                          </h4>
-                          <p className="mt-1 text-xs text-[#CBD5E1] font-mono">
-                            {project.badge ? project.badge : 'AI Systems Active'}
-                          </p>
-                        </div>
+                        ) : (
+                          <>
+                            {/* Center Visual Graphics */}
+                            <div className="my-auto text-center p-4">
+                              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white backdrop-blur-md shadow-lg">
+                                <Sparkles className="h-8 w-8 animate-pulse text-[#F97316]" />
+                              </div>
+                              <h4 className="mt-4 text-lg font-bold text-[#FAFAFA] tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                {project.title}
+                              </h4>
+                              <p className="mt-1 text-xs text-[#D4D4D8] font-mono">
+                                {project.badge ? project.badge : 'AI Systems Active'}
+                              </p>
+                            </div>
 
-                        {/* Bottom Metric Tags */}
-                        <div className="flex items-center justify-between rounded-xl bg-black/60 p-2.5 backdrop-blur-md text-[11px] font-mono text-[#CBD5E1] border border-white/10">
-                          <span>Role: AI/ML</span>
-                          <span className="text-[#22C55E]">Status: Verified Node</span>
-                        </div>
+                            {/* Bottom Metric Tags */}
+                            <div className="m-3 flex items-center justify-between rounded-xl bg-black/60 p-2.5 backdrop-blur-md text-[11px] font-mono text-[#D4D4D8] border border-white/10">
+                              <span>Role: AI/ML</span>
+                              <span className="text-[#F97316]">Status: Verified Node</span>
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>

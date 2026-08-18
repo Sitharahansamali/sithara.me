@@ -38,7 +38,7 @@ export default function TypingEffect() {
   return (
     <span className="inline-flex items-center text-gradient font-bold">
       <span>{currentText}</span>
-      <span className="ml-1 inline-block h-6 w-0.5 animate-pulse bg-[#58a6ff]" />
+      <span className="ml-1 inline-block h-6 w-0.5 animate-pulse bg-[#F97316]" />
     </span>
   );
 }
